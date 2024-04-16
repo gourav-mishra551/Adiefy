@@ -1,0 +1,12 @@
+
+* {
+  font-family: "Tilt Neon", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings:
+    "XROT" 0,
+    "YROT" 0;
+   
+}
+.footer{
+    background-color: black !important;
+}
