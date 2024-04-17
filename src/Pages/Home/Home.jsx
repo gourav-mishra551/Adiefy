@@ -11,6 +11,8 @@ import Using from "../../Components/Using/Using"
 import Business from "../../Components/Business/Business"
 import Billboard from "../../Components/Billboard/Billboard"
 import Companies from "../../Components/CompaniesSearch/Companies"
+import BillImage from "../../Components/BillboardImage/BillImage"
+import GetinTouch from "../../Components/GetInTouch/GetinTouch"
 
 const Home = () => {
   return (
@@ -22,11 +24,13 @@ const Home = () => {
         <Billboard/>
         <Business/>
        <Companies/>
+       <BillImage/>
       <div className="bg-black  pt-[5vh] pb-[10vh]">
         <Goals />
       </div>
       <Confused />
       <Using/>
+      <GetinTouch/>
       <Accordions/>
       <Footers/>
     </div>
