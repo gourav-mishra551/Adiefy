@@ -150,7 +150,7 @@ export default function NavBar2() {
                               </div>
                            </div>
                            {/* dropdown end  =======================================================                             */}
-                           <Link >
+                           <Link to = '/about' >
                               <a className="flex sm:pb-[26px] font-bold sm:mt-[30px] items-center sm:ml-2  sm:mb-0 sm:text-base text-[18px]  hover:text-red-600 link link-underline link-underline-black  text-white pl-6 pr-6">
                                  About</a></Link>
                            <Link to='/contact'>

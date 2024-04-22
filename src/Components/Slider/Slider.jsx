@@ -16,7 +16,7 @@ const Slider = ({images}) => {
               </button>
              <div className="slider--feature">
                 <p ref={slideText} className="feature--text"></p>
-                <button className="feature__btn">Buy Ads</button>
+
               </div>
               <button onClick={goToNextSlide} className="slider__btn-right">
                 <i className="fas fa-angle-right"></i>
