@@ -15,6 +15,8 @@ import Digital from './Pages/Digital/Digital'
 import Magazine from './Pages/Magazine/Magazine'
 import NewsPaper from './Pages/Newspaper/Newspaper'
 import Airplane from './Pages/Airplane/Airplance'
+import Outdoor from './Pages/Outdoor/Outdoor'
+import Television from './Pages/Television/Television'
 
 function App() {
 
@@ -22,7 +24,7 @@ function App() {
   return (
     <>
    <BrowserRouter>
-      <Routes>
+      <Routes> 
       <Route path="/" element={<Home />}/>
       
       {/* main pages */}
@@ -37,7 +39,8 @@ function App() {
      <Route path = '/magazine' element = {<Magazine/>}/>
      <Route path = '/newspaper' element = {<NewsPaper/>}/>
      <Route path = '/airplane' element = {<Airplane/>}/>
-
+      <Route path = '/outdoor' element = {<Outdoor/>}/>
+      <Route path = '/television' element = {<Television/>}/>
 
 
      {/* subpages */}

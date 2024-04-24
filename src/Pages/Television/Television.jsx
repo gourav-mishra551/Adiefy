@@ -2,7 +2,7 @@ import NavBar2 from "../../Components/Navbar/Navbar";
 import Footers from "../../Components/Footer/Footer";
 
 import Slider from "../../Components/Slider/Slider";
-import Image from "../../magazine";
+import Image from "./TelevisionImage";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import parse from 'html-react-parser';

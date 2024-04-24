@@ -1,11 +1,13 @@
 import NavBar2 from "../../Components/Navbar/Navbar";
 import Footers from "../../Components/Footer/Footer";
-
 import Slider from "../../Components/Slider/Slider";
 import Image from "../../magazine";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import parse from 'html-react-parser';
+
+import {  useDispatch } from 'react-redux';
+import {  idstorePush } from "../../redux/slice";
 
 const Airplane = () => {
     const [loading, setLoading] = useState(true); // State to manage loading state
@@ -17,6 +19,8 @@ const Airplane = () => {
 
     const url = url_main + "/" + url_cinema
 
+    const dispatch = useDispatch()
+    const id = "6623a3503608ae1b78e4ca87"
 
 
     useEffect(() => {
@@ -69,7 +73,7 @@ const Airplane = () => {
                                 <Slider images={Image} />
                                 {/* different adertisement area  */}
                                 <Link to="/subpages">
-                                    <div className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 ">
+                                    <div id= {id} className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 " onClick= {()=> dispatch(idstorePush(id))} >
                                         <img
                                             className="h-[20vh]  sm:w-[20vw] w-[70vw] bg-cover"
                                             src="./istockphoto-155439315-612x612.jpg"
