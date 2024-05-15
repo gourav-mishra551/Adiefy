@@ -121,10 +121,10 @@ const Airplane = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="log_discription w-[80vw] mx-auto sm:text-xl text-lg text-justify mb-10 mt-10">
+                    {/* <div className="log_discription w-[80vw] mx-auto sm:text-xl text-lg text-justify mb-10 mt-10">
                                         {parse(CinemaData.longDescription)}
                     
-                    </div>
+                    </div> */}
                     <Footers />
                 </div>
             </>

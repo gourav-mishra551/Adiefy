@@ -3,18 +3,18 @@ import NavBar2 from "../Navbar/Navbar";
 import Footers from "../Footer/Footer";
 import Images from "../../ImagesSub";
 import { useEffect } from "react";
-import { useSelector , dispatch} from "react-redux";
-import { idstorePop  } from "../../redux/slice";
+// import { useSelector , dispatch} from "react-redux";
+// import { idstorePop  } from "../../redux/slice";
 
 const SubCategories = () => {
   const id = useSelector(state => state.idstore.id)
 
-  useEffect(() => {
-   // Cleanup function to remove the component ID when unmounting
-    return () => {
-      dispatch(idstorePop(id));
-    };
-  }, [id]);
+  // useEffect(() => {
+  //  // Cleanup function to remove the component ID when unmounting
+  //   return () => {
+  //     dispatch(idstorePop(id));
+  //   };
+  // }, [id]);
 
   return (
     <div>

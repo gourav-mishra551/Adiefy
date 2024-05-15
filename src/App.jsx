@@ -17,6 +17,7 @@ import NewsPaper from './Pages/Newspaper/Newspaper'
 import Airplane from './Pages/Airplane/Airplance'
 import Outdoor from './Pages/Outdoor/Outdoor'
 import Television from './Pages/Television/Television'
+import RichTextEditor from './Pages/richText/Richtext'
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
      <Route path = '/airplane' element = {<Airplane/>}/>
       <Route path = '/outdoor' element = {<Outdoor/>}/>
       <Route path = '/television' element = {<Television/>}/>
+      <Route path = '/rich-text-editor' element = {<RichTextEditor/>}/>
 
 
      {/* subpages */}
