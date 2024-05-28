@@ -5,8 +5,7 @@ import useSlider from '../../Hooks/useSlider';
 const Slider = ({images}) => {
   
   const slideImage = useRef(null)
-  const slideText = useRef(null)
-  const { goToPreviousSlide, goToNextSlide } = useSlider(slideImage, slideText,images )
+  const { goToPreviousSlide, goToNextSlide } = useSlider(slideImage, images )
 
     return (
           <div className="slider" ref={slideImage}>
@@ -14,10 +13,6 @@ const Slider = ({images}) => {
               <button onClick={goToPreviousSlide} className="slider__btn-left">
                 <i className="fas fa-angle-left"></i>
               </button>
-             <div className="slider--feature">
-                <p ref={slideText} className="feature--text"></p>
-
-              </div>
               <button onClick={goToNextSlide} className="slider__btn-right">
                 <i className="fas fa-angle-right"></i>
               </button>

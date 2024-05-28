@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const useSlider = (slideImage, slideText, images) => {
+const useSlider = (slideImage, images) => {
     let slideCounter = 0;
 
     useEffect(() => startSlider())
@@ -10,8 +10,8 @@ const useSlider = (slideImage, slideText, images) => {
             to right,
             rgba(34, 34, 34, 0.4),
             rgba(68, 68, 68, 0.4)
-            ), url(${images[0].src})`;
-            slideText.current.innerHTML = images[0].text;
+            ), url(${images[0].url})`;
+            
     }
 
     const handleSlide = (slide) => {
@@ -19,8 +19,8 @@ const useSlider = (slideImage, slideText, images) => {
             to right,
             rgba(34, 34, 34, 0.4),
             rgba(68, 68, 68, 0.4)
-          ), url(${images[slide - 1].src})`;
-          slideText.current.innerHTML = images[slide - 1].text;
+          ), url(${images[slide - 1].url})`;
+          
          animateSlide(slideImage)
     }
 
@@ -52,8 +52,8 @@ const useSlider = (slideImage, slideText, images) => {
           to right,
           rgba(34, 34, 34, 0.4),
           rgba(68, 68, 68, 0.4)
-          ),url(${images[slideCounter + 1].src})`;
-      slideText.current.innerHTML = images[slideCounter + 1].text;
+          ),url(${images[slideCounter + 1].url})`;
+      
       slideCounter++;
       animateSlide(slideImage)
     }

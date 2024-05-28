@@ -1,22 +1,46 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    id : [],
-}
+  id: [],
+};
 
-export const counterslice = createSlice({
-    name: "idstore",
-    initialState,
-    reducers:{
-        idstorePush:(state , action)=>{
-            state.id.push(action.payload)
-        },
-        idstorePop:(state , action)=>{
-            state.id = state.id.filter(id => id !== action.payload)
-        } 
-    }
-})
+const initialAirportState = {
+  id2: [],
+};
 
-export const {idstorePop ,idstorePush} = counterslice.actions
+const idstoreSlice = createSlice({
+  name: "idstore",
+  initialState,
+  reducers: {
+    idstorePush: (state, action) => {
+      state.id.push(action.payload);
+      console.log(action.payload);
+    },
+    idstorePop: (state, action) => {
+      state.id = state.id.filter(id => id !== action.payload);
+    },
+  },
+});
 
-export default counterslice.reducer
+// Exports all category data like cinema , airports malls etc.
+
+const airportIdSlice = createSlice({
+  name: "airportId",
+  initialState: initialAirportState,
+  reducers: {
+    airportIdPush: (state, action) => {
+      state.id2.push(action.payload);
+      console.log(action.payload);
+    },
+  },
+});
+
+// Export actions
+export const { idstorePush, idstorePop } = idstoreSlice.actions;
+export const { airportIdPush } = airportIdSlice.actions;
+
+// Combine reducers (if needed)
+export const rootReducer = {
+  idstore: idstoreSlice.reducer,
+  airportId: airportIdSlice.reducer,
+};

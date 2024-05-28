@@ -6,23 +6,30 @@ import Image from "../../magazine";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import parse from 'html-react-parser';
+import { useDispatch } from 'react-redux';
+import { idstorePush , airportIdPush} from "../../redux/slice";
+
 
 const Magazine = () => {
+    const dispatch = useDispatch();
     const [loading, setLoading] = useState(true); // State to manage loading state
     const [error, setError] = useState(null); // State to manage errors
+    const [subCategory , setSubCategory] = useState([])
 
     const url_main = import.meta.env.VITE_MAIN;
-    const url_cinema = import.meta.env.VITE_CINEMA;
     const [CinemaData, setdata] = useState([]);
 
-    const url = url_main + "/" + url_cinema
+    const handleDivClick = (id) => {
+        dispatch(idstorePush(id));
+    };
 
-
+    const magazineId = '66238015df3d3c6fbedb57da'
+    dispatch(airportIdPush(magazineId));
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("https://adifie.cyclic.app/listing/category/66238015df3d3c6fbedb57da", {
+                const response = await fetch(`${url_main}66238015df3d3c6fbedb57da`, {
                     method: "GET",
                     headers: {
                         "Content-type": "application/json",
@@ -33,7 +40,8 @@ const Magazine = () => {
                     throw new Error("Failed to fetch data");
                 }
                 const newData = await response.json();
-                setdata(newData);
+                setdata(newData.category);
+                setSubCategory(newData.subcategories)
                 console.log(newData)
             } catch (error) {
                 setError(error);
@@ -43,8 +51,8 @@ const Magazine = () => {
 
         };
         fetchData();
-    }, [url])
-
+    }, [])
+   
 
     if (loading) {
         return (
@@ -66,20 +74,24 @@ const Magazine = () => {
                         {/* sub header */}
                         <div className="sub-header flex sm:flex-row flex-col mb-10  rounded-xl">
                             <div className="left sm:w-[60vw] w-[80vw] mx-auto">
-                                <Slider images={Image} />
+                            <Slider images={CinemaData.image} />
                                 {/* different adertisement area  */}
                                 <Link to="/subpages">
-                                    <div className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 ">
+                                {subCategory.map((item)=>{
+                                        return(
+                                            <div id= {item._id} className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 "
+                                            onClick={() => handleDivClick(item._id)}
+                                            >
                                         <img
                                             className="h-[20vh]  sm:w-[20vw] w-[70vw] bg-cover"
-                                            src="./istockphoto-155439315-612x612.jpg"
+                                            src= {item.image[0]?.url}
                                             alt=""
                                         />
                                         <div className="ml-8">
                                             <h2 className="sm:text-[24px] text-[18px] text-gray-500 font-medium textShadow-[#fff] mt-3">
-                                                Indigo Airlines
+                                                {item.title}
                                             </h2>
-                                            <p className="text-gray-500">570k Monthely Passenger</p>
+                                            <p className="text-gray-500">{item.totalReach} Monthely Passenger</p>
                                             <p className="mt-4 text-[22px]">
                                                 {" "}
                                                 <i
@@ -89,7 +101,10 @@ const Magazine = () => {
                                                 <span>Price ? </span> On Request
                                             </p>
                                         </div>
+                                       
                                     </div>
+                                        )
+                                    })}
                                 </Link>
                             </div>
                             <div className="right sm:w-[40vw]  mx-auto p-10 bg-black sm:mt-3 mt-10 rounded-3xl h-auto sm:ml-5">
