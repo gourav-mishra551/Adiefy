@@ -43,7 +43,7 @@ const NewsPaper = () => {
                 const newData = await response.json();
                 setdata(newData.category);
                 setSubCategory(newData.subcategories)
-                console.log(subCategory)
+                console.log(CinemaData.image)
             } catch (error) {
                 setError(error);
             } finally {
