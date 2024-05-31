@@ -1,36 +1,35 @@
+
 import NavBar2 from "../../Components/Navbar/Navbar";
 import Footers from "../../Components/Footer/Footer";
 
 import Slider from "../../Components/Slider/Slider";
-import Image from "./outdoorImage";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
 import parse from 'html-react-parser';
+import { useDispatch } from 'react-redux';
 import { idstorePush , airportIdPush} from "../../redux/slice";
 
-const Outdoor = () => {
+const Malls = () => {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(true); // State to manage loading state
     const [error, setError] = useState(null); // State to manage errors
     const [subCategory , setSubCategory] = useState([])
-
     const url_main = import.meta.env.VITE_MAIN;
-
+   
     const [CinemaData, setdata] = useState([]);
 
     const handleDivClick = (id) => {
         dispatch(idstorePush(id));
     };
 
-    const OutdoorId = '66238c1d328523e5c3835c59'
-    dispatch(airportIdPush(OutdoorId));
+    const   MallsId = "66507bbbfec9f5f338e9fdcf"
+    dispatch(airportIdPush(MallsId));
 
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${url_main}${OutdoorId}`, {
+                const response = await fetch(`${url_main}${MallsId}`, {
                     method: "GET",
                     headers: {
                         "Content-type": "application/json",
@@ -43,7 +42,7 @@ const Outdoor = () => {
                 const newData = await response.json();
                 setdata(newData.category);
                 setSubCategory(newData.subcategories)
-                console.log(newData)
+                console.log(CinemaData.image)
             } catch (error) {
                 setError(error);
             } finally {
@@ -53,7 +52,7 @@ const Outdoor = () => {
         };
         fetchData();
     }, [])
-
+    
 
     if (loading) {
         return (
@@ -75,7 +74,7 @@ const Outdoor = () => {
                         {/* sub header */}
                         <div className="sub-header flex sm:flex-row flex-col mb-10  rounded-xl">
                             <div className="left sm:w-[60vw] w-[80vw] mx-auto">
-                                {loading ? "loading ...." : <Slider images={CinemaData.image} />}
+                            <Slider images={CinemaData.image} />
                                 {/* different adertisement area  */}
                                 <Link to="/subpages">
                                 {subCategory.map((item)=>{
@@ -124,7 +123,6 @@ const Outdoor = () => {
                                     <div className="border border-l-8 border-lime-200 p-4 ">
                                         {CinemaData.facts?.map((item, index) => (
                                             <li className="text-white" key={index}>
-                                                {console.log(item)}
                                              {item.fact }
                                             </li>
                                         ))}
@@ -134,7 +132,7 @@ const Outdoor = () => {
                         </div>
                     </div>
                     <div className="log_discription w-[80vw] mx-auto sm:text-xl text-lg text-justify mb-10 mt-10">
-                    {loading ? "Loading..." : parse(`<p>${CinemaData.longDescription}</p>`)}
+                                        {parse(CinemaData.longDescription)}
                     
                     </div>
                     <Footers />
@@ -144,4 +142,4 @@ const Outdoor = () => {
     }
 }
 
-export default Outdoor;
+export default Malls

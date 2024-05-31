@@ -15,7 +15,7 @@ const Cinema = () => {
     const [error, setError] = useState(null); // State to manage errors
     const [subCategory , setSubCategory] = useState([])
 
-    const url_main = import.meta.env.VITE_MAIN_CINEMA;
+    const url_main = import.meta.env.VITE_MAIN;
     const [CinemaData, setdata] = useState([]);
 
     const handleDivClick = (id) => {
@@ -30,7 +30,7 @@ const Cinema = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${url_main}`, {
+                const response = await fetch(`${url_main}${cinema_id}`, {
                     method: "GET",
                     headers: {
                         "Content-type": "application/json",

@@ -1,4 +1,5 @@
 import "./header.css";
+import ads from "../../assets/Online-ads-unscreen.gif";
 const Header = () => {
   return (
     <div>
@@ -8,14 +9,14 @@ const Header = () => {
         </div>
 
         <div className="main-header flex sm:flex-row flex-col justify-between">
-          <div className="left w-auto sm:w-[50vw] mx-auto sm:mt-20 px-5 sm:px-0 sm:pt-0 pt-14 sm:p-10">
+          <div className="left w-auto  mx-auto sm:mt-20 px-5 sm:px-0 sm:pt-0 pt-14 sm:p-10">
             <h1 className="header-h1">
               <span className="word">
                 Empower the Value<span className="superscript">s</span>{" "}
               </span>
               <span className="word">of Advertisement</span>
             </h1>
-            <p className="text-gray-300 text-[14px] sm:text-[20px] font-normal sm:font-semibold w-auto sm:w-[40vw] mt-5 sm:mt-10">
+            <p className="text-gray-300 text-[14px] sm:text-[20px] font-normal  w-auto sm:w-[40vw] mt-5 sm:mt-10">
               Unlock the power of creativity with our advertising expertise.
               From captivating campaigns to strategic branding solutions, we
               craft narratives that resonate and drive results.
@@ -34,7 +35,7 @@ const Header = () => {
             </div>
           </div>
           <div className="right  overflow-hidden relative sm:top-14 sm:right-10 ">
-            <img src="./Designer-removebg-preview.png" alt="background" />
+            <img src= {ads} alt="background" />
           </div>
         </div>
       </header>

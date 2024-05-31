@@ -1,6 +1,6 @@
 
 
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600");
+
 
 :root {
   --bar-scale-y: 0;
@@ -48,7 +48,6 @@
 
 .header-h1{
   color: white;
-  font-family: "Playfair Display", Vidaloka, serif;
   font-size: 5rem;
   line-height: 0.85;
   perspective: 500px;
@@ -111,9 +110,6 @@
 /* sparkle */
 .superscript::after {
   --size: 10rem;
-
-  position: absolute;
-
   top: -5%;
   left: -85%;
 
@@ -183,7 +179,6 @@
     background-size: cover;
     background-position: top;
     position: relative;
-
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 

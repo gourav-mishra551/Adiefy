@@ -18,6 +18,11 @@ import Airplane from './Pages/Airplane/Airplance'
 import Outdoor from './Pages/Outdoor/Outdoor'
 import Television from './Pages/Television/Television'
 import RichTextEditor from './Pages/richText/Richtext'
+import Btl from './Pages/Btl/Btl'
+import Radio from './Pages/Radio/Radio'
+import Sports from './Pages/Sports/Sports'
+import TelevisionAdd from './Pages/Television/Television'
+import Malls from './Pages/Malls/Malls'
 
 function App() {
 
@@ -43,8 +48,12 @@ function App() {
       <Route path = '/outdoor' element = {<Outdoor/>}/>
       <Route path = '/television' element = {<Television/>}/>
       <Route path = '/rich-text-editor' element = {<RichTextEditor/>}/>
-
-
+      <Route path = "/Below-the-Line-Marketing" element = {<Btl/>}/>
+      <Route path = "/outdoor" element = {<Outdoor/>}/>
+      <Route path = "/radio" element = {<Radio/>}/>
+      <Route path = "/sports" element = {<Sports/>}/>
+      <Route path = "/television" element = {<TelevisionAdd/>}/>
+      <Route path = "/malls" element = {<Malls/>}/>
      {/* subpages */}
      <Route path = "/subpages" element = {<SubCategories/>}/>
       
