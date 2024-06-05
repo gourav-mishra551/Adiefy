@@ -13,7 +13,7 @@ const Header = () => {
 
           <div className="main-header flex sm:flex-row flex-col justify-between">
             <div className="left w-auto  mx-auto sm:mt-20 px-5 sm:px-0 sm:pt-0 pt-14 sm:p-10">
-              <h1 className="header-h1 mt-4">
+              <h1 className="header-h1 sm:mt-4 mt-10">
                 <span className="word">
                   Empower the Value<span className="superscript">s</span>{" "}
                 </span>

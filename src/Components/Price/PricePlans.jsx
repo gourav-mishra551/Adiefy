@@ -79,6 +79,7 @@ const PricePlans = () => {
                         </button>
                     </div>
                 </div>
+                
             </div>
 
         </div>

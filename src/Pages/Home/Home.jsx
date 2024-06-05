@@ -18,21 +18,20 @@ const Home = () => {
   return (
     <div className="bg-gray-200">
       <NavBar2 />
-
-      <Header/>
-        <Media />
-        <Billboard/>
-        <Business/>
-       <Companies/>
-       <BillImage/>
+      <Header />
+      <Media />
+      <Billboard />
+      <Business />
+      <Companies />
+      <BillImage />
       <div className="bg-black  pt-[5vh] pb-[10vh]">
         <Goals />
       </div>
       <Confused />
-      <Using/>
-      <GetinTouch/>
-      <Accordions/>
-      <Footers/>
+      <Using />
+      <GetinTouch />
+      <Accordions />
+      <Footers />
     </div>
   )
 }

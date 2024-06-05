@@ -1,7 +1,7 @@
 const Goals = () => {
   return (
     <div className="w-[80vw] sm:mt-[10vh] mx-auto">
-      <h1 className="sm:text-[32px] text-[22px] text-gray-200 font-semibold flex justify-center textShadow-[#fff]">
+      <h1 className="sm:text-[32px] text-center text-[22px] text-gray-200 font-semibold flex justify-center textShadow-[#fff]">
         Achieve all your goals in one place
       </h1>
       <div className="button w-[120px] mx-auto mt-6">
@@ -36,7 +36,7 @@ const Goals = () => {
         <div className="first w-full flex flex-col sm:gap-0 gap-10 sm:flex-row justify-between align-middle">
           {/* ==================  first */}
           <div className="first1 flex flex-col  justify-center align-middle">
-            <div className="icon bg-red-600 rounded-full h-20 p-6 w-20 mx-auto">
+            <div className="icon bg-red-600 rounded-full sm:h-20 p-6 sm:w-20 h-[70px] w-[70px] flex justify-center items-center mx-auto">
               <i className=" fa-regular fa-newspaper fa-2xl"></i>
             </div>
             <h3 className="text-[16px] sm:text-[22px] w-auto sm:w-[330px] mx-auto text-center font-semibold mt-5 text-white">
@@ -48,7 +48,7 @@ const Goals = () => {
           </div>
           {/* =========  second */}
           <div className="first2 flex flex-col justify-center align-middle">
-            <div className="icon bg-red-600 rounded-full h-20 p-5 w-20 mx-auto">
+            <div className="icon bg-red-600 rounded-full sm:h-20 p-5 sm:w-20 h-[70px] w-[70px] flex justify-center items-center mx-auto">
               <i className="fa-solid fa-signal fa-2xl"></i>
             </div>
             <h3 className="text-[16px] text-white sm:text-[22px] w-auto sm:w-[330px] mx-auto text-center font-semibold mt-5">
@@ -60,7 +60,7 @@ const Goals = () => {
           </div>
           {/*================== third */}
           <div className="first3 flex flex-col justify-center align-middle">
-            <div className="icon bg-red-600 rounded-full h-20 p-5 pt-[22px] w-20 mx-auto">
+            <div className="icon bg-red-600 rounded-full sm:h-20 p-5 pt-[22px] sm:w-20 h-[70px] w-[70px] flex justify-center items-center mx-auto">
               <i className="fa-solid fa-shop fa-2xl"></i>
             </div>
             <h3 className="text-[16px] text-white sm:text-[22px] w-auto sm:w-[330px] mx-auto text-center font-semibold mt-5">
@@ -75,7 +75,7 @@ const Goals = () => {
         <div className="seond w-[50vw] flex-col sm:gap-0 gap-10 sm:flex-row mx-auto flex  mt-16">
           {/* ==================  first */}
           <div className="first1 flex flex-col  justify-center align-middle">
-            <div className="icon bg-red-600 rounded-full h-20 p-6 w-20 mx-auto">
+            <div className="icon bg-red-600 rounded-full sm:h-20 p-6 sm:w-20 h-[70px] w-[70px] flex justify-center items-center mx-auto">
               <i className="fa-solid fa-earth-americas fa-2xl"></i>
             </div>
             <h3 className="text-[16px] text-white sm:text-[22px] w-auto sm:w-[340px] mx-auto text-center font-semibold mt-5">
@@ -87,8 +87,8 @@ const Goals = () => {
           </div>
           {/* =========  second */}
           <div className="first2 flex flex-col justify-center align-middle sm:ml-24 mml-0">
-            <div className="icon bg-red-600 rounded-full h-20 p-5 w-20 mx-auto">
-              <i className="fa-solid fa-mobile fa-2xl pt-[18px] pl-[8px]"></i>
+            <div className="icon bg-red-600 rounded-full sm:h-20 p-5 sm:w-20 h-[70px] w-[70px] flex justify-center items-center mx-auto">
+              <i className="fa-solid fa-mobile fa-2xl sm:pt-[18px] sm:pl-[8px]"></i>
             </div>
             <h3 className="text-[16px] text-white sm:text-[22px] w-auto sm:w-[330px] mx-auto text-center font-semibold mt-5">
               Market your app to new users
