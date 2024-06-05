@@ -1,7 +1,6 @@
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { FaBars } from "react-icons/fa";
 import "./navbar.css"
 
 export default function NavBar2() {
@@ -17,24 +16,27 @@ export default function NavBar2() {
       }
    }, [])
 
-
    return (
-      <nav className="w-auto text-black ">
-         <div className="sm:px-0  px-[5%] mx-auto bg-black   md:items-center md:flex hh sm:flex sm:justify-between">
+      <nav className="w-auto text-black">
+         <div className="sm:px-0  px-[5%] mx-auto bg-black md:items-center md:flex hh sm:flex sm:justify-between">
             <div>
                <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                  <Link to="/home">
-                     Adiefy
+                  <Link to="/">
+                    <p className="text-white ml-10">Adiefy</p> 
                   </Link>
                   <div className="md:hidden">
                      <button
-                        className="p-2 h-248px  rounded-md outline-none   z-30"
+                        className="p-2 h-248px  rounded-md outline-none z-30"
                         onClick={() => setNavbar(!navbar)}
                      >
                         {navbar ? (
-                           <img src='./Close.svg' />
+                           <FaBars 
+                              className="text-white text-2xl"
+                           />
                         ) : (
-                           <img src='./Group 47789.svg' />
+                           <FaBars 
+                              className="text-white text-2xl"
+                           />
                         )}
                      </button>
                   </div>
@@ -49,10 +51,11 @@ export default function NavBar2() {
                      <div className="w-full ">
                         <div className="flex flex-col  sm:flex-row justify-center w-auto ">
                            <Link to='/' className=" items-center" >
-                              <a className="flex   sm:font-bold  sm:pb-[26px] sm:mt-[30px] sm:mb-0 sm:text-base text-[18px] font-medium hover:text-red-600 link link-underline link-underline-black  text-white pl-6 pr-6">
+                              <a className="flex sm:font-bold  sm:pb-[26px] sm:mt-[30px] sm:mb-0 sm:text-base text-[18px] font-medium hover:text-red-600 link link-underline link-underline-black  text-white pl-6 pr-6">
                                  Home
                               </a>
                            </Link>
+
                            {/* drop down ++++++++++++++++++++=========== */}
                            <div className="dropdown">
                               <button className="dropbtn  sm:my-0 sm:font-bold mr-auto sm:text-base text-[18px] sm:ml-8  font-medium hover:text-red-600 link link-underline link-underline-black text-white sm:pb-[27px]  ml-[2px]">Advertisements
@@ -149,8 +152,9 @@ export default function NavBar2() {
                                  </div>
                               </div>
                            </div>
-                           {/* dropdown end  =======================================================                             */}
-                           <Link to = '/about' >
+                           {/* dropdown end  =======================================================  */}
+
+                           <Link to='/about' >
                               <a className="flex sm:pb-[26px] font-bold sm:mt-[30px] items-center sm:ml-2  sm:mb-0 sm:text-base text-[18px]  hover:text-red-600 link link-underline link-underline-black  text-white pl-6 pr-6">
                                  About</a></Link>
                            <Link to='/contact'>
@@ -160,7 +164,7 @@ export default function NavBar2() {
                            </Link>
                            {nouser ?
                               <li className="ml-1 font-bold sm:pb-[26px] sm:mt-[30px] sm:ml-2  sm:text-base text-[18px] link link-underline hover:text-red-600 link-underline-black  text-white   sm:w-28 sm:text-center">{user}</li> :
-                               <div className="flex">
+                              <div className="flex">
                                  <Link to='/login'>
                                     <li className=" ml-1 font-bold sm:pb-[26px] sm:mt-[30px] sm:ml-2  sm:text-base text-[18px] link link-underline hover:text-red-600 link-underline-black  text-white   sm:w-28 sm:text-center ">
                                        Login

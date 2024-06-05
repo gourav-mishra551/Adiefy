@@ -6,10 +6,10 @@ import { Accordion } from "flowbite-react";
 export default function Accordions() {
   return (
     <>
-    <h1 className="text-[22px] sm:text-[32px] font-semibold sm:w-[60vw] w-[80vw] mt-[10vh] mb-[5vh]  mx-auto">
+    <h1 className="text-[22px] sm:text-[32px] font-semibold sm:w-[60vw] w-[80vw] sm:mt-0 mt-10 mb-[5vh]  mx-auto">
         FAQ'S
     </h1>
-    <Accordion className="sm:w-[60vw] w-[80vw] mx-auto bg-black" >
+    <Accordion className="sm:w-[60vw] w-[80vw] mx-auto bg-black mb-10 sm:mb-0" >
       <Accordion.Panel>
         <Accordion.Title>What is Adifie</Accordion.Title>
         <Accordion.Content>

@@ -1,13 +1,12 @@
-
 export default function Footers() {
   return (
     // HTMLResult Skip Results Iframe
     // EDIT ON
     
-    <div className=" mx-auto bg-black">
-        <div className="p-5 bg-black rounded-lg py-12 mt-5 border border-red-400 w-[50vw] mx-auto  rounded-b-[80px]">
+    <div className=" mx-auto bg-black sm:p-0 px-3 py-1">
+        <div className="p-5 bg-black rounded-lg py-12 mt-5 border border-red-400 sm:w-[50vw] mx-auto  rounded-b-[80px]">
             <div className="flex flex-col ">
-                <h3 className="text-[62px] leading-10 text-white w-full text-center font-bold">Suscribe <span className="text-[62px] font-thin font-sans">Newsletter</span></h3>
+                <h3 className="sm:text-[62px] text-[30px] leading-10 text-white w-full text-center font-bold">Subscribe <span className="sm:text-[62px] text-[30px]  font-thin font-sans">Newsletter</span></h3>
                 <div className="text-base text-gray-500 w-full  md:w-2/4 self-center text-center lg:pt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
             </div>
             <div className="flex flex-row justify-center space-x-3 py-4">

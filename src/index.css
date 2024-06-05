@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .hover\:animation-move-around:hover {
+    animation: move-around 1s ease-in-out infinite;
+  }
+}

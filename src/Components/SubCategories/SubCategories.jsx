@@ -14,7 +14,7 @@ const SubCategories = () => {
 
     const url_main = import.meta.env.VITE_MAIN;
     const [CinemaData, setData] = useState([]);
-   
+
     const getIdFromArray = (ids) => {
         if (ids?.length === 0) {
             return [0]; // or handle the empty array case as needed
@@ -45,7 +45,7 @@ const SubCategories = () => {
                         "Content-Type": "application/json", // Correct header capitalization
                     },
                 });
-                
+
                 if (!response.ok) {
                     throw new Error("Failed to fetch data");
                 }
@@ -72,12 +72,14 @@ const SubCategories = () => {
                 <hr className="sep-3 mt-5" />
                 <div className="advertisement w-[80vw] mx-auto mt-10">
                     {/* sub header */}
-                    <div className="sub-header flex sm:flex-row flex-col mb-10 rounded-xl">
-                        <div className="left sm:w-[60vw] w-[80vw] mx-auto">
+                    <div className="sub-header flex flex-col mb-10 rounded-xl">
+
+                        <div className="left sm:w-[60%] w-[80vw] mx-auto">
                             {!loading && <Slider images={CinemaData?.image} />}
                             {/* different advertisement area */}
                         </div>
-                        <div className="right sm:w-[40vw] mx-auto p-10 bg-black sm:mt-3 mt-10 rounded-3xl h-auto sm:ml-5">
+
+                        <div className="right sm:w-[100%] mx-auto p-10 bg-black sm:mt-3 mt-10 rounded-3xl h-auto sm:ml-5">
                             <h1 className="text-gray-200 sm:text-[18px] text-[16px]">
                                 About Advertising in {CinemaData.title}.
                             </h1>

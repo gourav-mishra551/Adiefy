@@ -15,7 +15,7 @@ const Confused = () => {
                 </a>
             </div>
             <div className="right ">
-                <img className="h-[460px]" src="./7720441.jpg" alt="thinking" />
+                <img className="sm:h-[460px]" src="./7720441.jpg" alt="thinking" />
             </div>
         </div>
     )
