@@ -12,7 +12,7 @@ const useSlider = (slideImage, images) => {
             rgba(68, 68, 68, 0.4)
             ), url(${images[0].url})`;
             
-    }
+    } 
 
     const handleSlide = (slide) => {
         slideImage.current.style.backgroundImage = `linear-gradient(

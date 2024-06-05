@@ -64,10 +64,10 @@ const Airport = () => {
             {CinemaData.fullTitle}
           </h1>
           <hr className="sep-3 mt-5" />
-          <div className="advertisememnt w-[80vw] mx-auto mt-10">
+          <div className="advertisememnt sm:w-[80vw] w-auto mx-auto sm:mt-10 mt-0">
             {/* sub header */}
             <div className="sub-header flex sm:flex-row flex-col mb-10  rounded-xl">
-              <div className="left sm:w-[60vw] w-[80vw] mx-auto">
+              <div className="left sm:w-[60vw] w-[100vw] mx-auto">
                 <Slider images={CinemaData.image} />
                 {/* different adertisement area  */}
                 <Link to="/subpages">
@@ -75,7 +75,7 @@ const Airport = () => {
                     return (
                       <div
                         id={item._id}
-                        className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 "
+                        className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 sm:w-auto w-[80vw] mx-auto"
                         onClick={() => handleDivClick(item._id)}
                       >
                         <img
@@ -117,7 +117,7 @@ const Airport = () => {
                   {new Date(CinemaData.createdAt).toLocaleString()}{" "}
                 </p>
                 <div className="mt-6">
-                  <div className="border border-l-8 border-lime-200 p-4 ">
+                  <div className="border border-l-8 border-red-500 p-4 ">
                     {CinemaData.facts?.map((item, index) => (
                       <li className="text-white" key={index}>
                         {item.fact}

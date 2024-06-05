@@ -4,29 +4,34 @@ import Slider from "../../Components/Slider/Slider";
 import Image from "../../magazine";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+
 import parse from 'html-react-parser';
 
-import {  useDispatch } from 'react-redux';
-import {  idstorePush } from "../../redux/slice";
+import { useDispatch } from 'react-redux';
+import { idstorePush } from "../../redux/slice";
 
 const Airplane = () => {
+    const dispatch = useDispatch()
+    const [subCategory, setSubCategory] = useState([]);
     const [loading, setLoading] = useState(true); // State to manage loading state
     const [error, setError] = useState(null); // State to manage errors
 
     const url_main = import.meta.env.VITE_MAIN;
-    const url_cinema = import.meta.env.VITE_CINEMA;
+
     const [CinemaData, setdata] = useState([]);
 
-    const url = url_main + "/" + url_cinema
+    const handleDivClick = (id) => {
+        dispatch(idstorePush(id));
+      };
 
-    const dispatch = useDispatch()
-    const id = "6623a3503608ae1b78e4ca87"
+    
+    const airplane_id = "6623a3503608ae1b78e4ca87"
 
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("https://adifie.cyclic.app/listing/category/6623a3503608ae1b78e4ca87", {
+                const response = await fetch(`${url_main}${airplane_id}`, {
                     method: "GET",
                     headers: {
                         "Content-type": "application/json",
@@ -38,6 +43,7 @@ const Airplane = () => {
                 }
                 const newData = await response.json();
                 setdata(newData);
+                setSubCategory(newData.subcategories);
                 console.log(newData)
             } catch (error) {
                 setError(error);
@@ -47,7 +53,7 @@ const Airplane = () => {
 
         };
         fetchData();
-    }, [url])
+    }, [])
 
 
     if (loading) {
@@ -66,34 +72,44 @@ const Airplane = () => {
                         {CinemaData.fullTitle}
                     </h1>
                     <hr className="sep-3 mt-5" />
-                    <div className="advertisememnt w-[80vw] mx-auto mt-10">
+                    <div className="advertisememnt sm:w-[80vw] w-auto mx-auto sm:mt-10 mt-0">
                         {/* sub header */}
                         <div className="sub-header flex sm:flex-row flex-col mb-10  rounded-xl">
-                            <div className="left sm:w-[60vw] w-[80vw] mx-auto">
-                                <Slider images={Image} />
+                            <div className="left sm:w-[60vw] w-[100vw] mx-auto">
+                            {loading ? "Loading ...." : <Slider images={Image} />}
                                 {/* different adertisement area  */}
                                 <Link to="/subpages">
-                                    <div id= {id} className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 " onClick= {()=> dispatch(idstorePush(id))} >
-                                        <img
-                                            className="h-[20vh]  sm:w-[20vw] w-[70vw] bg-cover"
-                                            src="./istockphoto-155439315-612x612.jpg"
-                                            alt=""
-                                        />
-                                        <div className="ml-8">
-                                            <h2 className="sm:text-[24px] text-[18px] text-gray-500 font-medium textShadow-[#fff] mt-3">
-                                                Indigo Airlines
-                                            </h2>
-                                            <p className="text-gray-500">570k Monthely Passenger</p>
-                                            <p className="mt-4 text-[22px]">
-                                                {" "}
-                                                <i
-                                                    className="fa fa-tag  text-red-500 mr-3"
-                                                    aria-hidden="true"
-                                                ></i>{" "}
-                                                <span>Price ? </span> On Request
-                                            </p>
-                                        </div>
-                                    </div>
+                                    {subCategory.map((item) => {
+                                        return (
+                                            <div
+                                                id={item._id}
+                                                className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 sm:w-auto w-[80vw] mx-auto"
+                                                onClick={() => handleDivClick(item._id)}
+                                            >
+                                                <img
+                                                    className="h-[20vh]  sm:w-[20vw] w-[70vw] bg-cover"
+                                                    src={item.image[0]?.url}
+                                                    alt=""
+                                                />
+                                                <div className="ml-8">
+                                                    <h2 className="sm:text-[24px] text-[18px] text-gray-500 font-medium textShadow-[#fff] mt-3">
+                                                        {item.title}
+                                                    </h2>
+                                                    <p className="text-gray-500">
+                                                        {item.totalReach} Monthely Passenger
+                                                    </p>
+                                                    <p className="mt-4 text-[22px]">
+                                                        {" "}
+                                                        <i
+                                                            className="fa fa-tag  text-red-500 mr-3"
+                                                            aria-hidden="true"
+                                                        ></i>{" "}
+                                                        <span>Price ? </span> On Request
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </Link>
                             </div>
                             <div className="right sm:w-[40vw]  mx-auto p-10 bg-black sm:mt-3 mt-10 rounded-3xl h-auto sm:ml-5">
@@ -101,19 +117,19 @@ const Airplane = () => {
                                     About Advertising in {CinemaData.title}.
                                 </h1>
                                 <p className="text-gray-400 mt-3">
-                                 {CinemaData.shortDescription}
+                                    {CinemaData.shortDescription}
                                 </p>
                                 <p className="text-gray-500 text-xl mt-5">
                                     {" "}
-                                    <i className="fa-regular fa-calendar mr-2"></i> { new Date(CinemaData.createdAt).toLocaleString() }{" "}
-    
+                                    <i className="fa-regular fa-calendar mr-2"></i> {new Date(CinemaData.createdAt).toLocaleString()}{" "}
+
                                 </p>
                                 <div className="mt-6">
                                     <div className="border border-l-8 border-lime-200 p-4 ">
                                         {CinemaData.facts?.map((item, index) => (
                                             <li className="text-white" key={index}>
                                                 {console.log(item)}
-                                             {item.fact }
+                                                {item.fact}
                                             </li>
                                         ))}
                                     </div>

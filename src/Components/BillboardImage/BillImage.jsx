@@ -1,22 +1,35 @@
+import React from 'react';
+import "./billboard.css"
+
 const BillImage = () => {
   return (
-    <div className="mb-10">
-      <p className="text-black sm:text-[18px] text-[14px] underline underline-offset-2  font-semibold cursor-pointer text-center">
-        Latest Gallery
-      </p>
-      <h1 className="sm:text-[32px] text-[22px] text-black font-semibold flex justify-center textShadow-[#fff] text-center mt-5">
-        Captive Your Audience The with Adertisement Magic
-      </h1>
-      <div className="image-gallery sm:mt-14 mt-6">
-        <div className="upper flex justify-between align-middle mx-auto w-[65vw]">
-            <img className="w-[27vw] max-w-[27vw] sm:h-[30vh] sm:rounded-2xl rounded-lg" src="./add1.jpg" alt="one" />
-            <img className="w-[16vw] max-w-[16vw] sm:h-[30vh] sm:rounded-2xl rounded-lg" src="./ads2.jpg" alt="two" />
-            <img  className="w-[20vw] max-w-[20vw] sm:h-[30vh] sm:rounded-2xl rounded-lg" src="./ads3.jpg" alt="three" />
-        </div>
-        <div className="bottom flex justify-between align-middle mx-auto w-[65vw] sm:mt-8 mt-3">
-        <img className="w-[33vw] max-w-[33vw] sm:h-[38vh] sm:rounded-2xl rounded-lg" src="./add1.jpg" alt="one" />
-            <img className="w-[30vw] max-w-[30vw] sm:h-[38vh] sm:rounded-2xl rounded-lg" src="./ads2.jpg" alt="two" />
-        </div>
+    <div className="pb-20 flex justify-center bg-black sm:pt-32 pt-0">
+
+      <div className="gallery ">
+        <span style={{ '--i': 1 }}>
+          <img src="https://media.istockphoto.com/id/525568423/photo/london-piccadilly-during-night.jpg?s=612x612&w=0&k=20&c=mBHnao0BnbANC1h2E-rOJ_tSviC7jTw9ir4tfp1V6uI=" alt="" />
+        </span>
+        <span style={{ '--i': 2 }}>
+          <img src="https://www.gingermediagroup.com/wp-content/uploads/2023/08/Screenshot-2023-08-22-160223.jpg" alt="" />
+        </span>
+        <span style={{ '--i': 3 }}>
+          <img src="https://www.design-lab.co.in/images/portfolio/Magazine/21.jpg" alt="" />
+        </span>
+        <span style={{ '--i': 4 }}>
+          <img src="https://imgv3.fotor.com/images/blog-cover-image/cocacola-ads-example-with-orange-background-slogan.png" alt="" />
+        </span>
+        <span style={{ '--i': 5 }}>
+          <img src="https://www.creatopy.com/blog/wp-content/uploads/2019/01/creative-advertising-ideas-2.png" alt="" />
+        </span>
+        <span style={{ '--i': 6 }}>
+          <img src="https://www.myhoardings.com/ads/wp-content/uploads/2021/02/de6dr78-4c772bfb-7b6b-4999-aac5-1d2b95df91c1.jpg" alt="" />
+        </span>
+        <span style={{ '--i': 7 }}>
+          <img src="https://blueatlas-13bc3.kxcdn.com/wp-content/uploads/2018/05/digital-advertising-1.jpg" alt="" />
+        </span>
+        <span style={{ '--i': 8 }}>
+          <img src="https://www.marketingdonut.co.uk/sites/default/files/advertising-strategy-faqs329911091.jpg" alt="" />
+        </span>
       </div>
     </div>
   );

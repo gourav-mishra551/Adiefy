@@ -14,7 +14,7 @@ const SubCategories = () => {
 
     const url_main = import.meta.env.VITE_MAIN;
     const [CinemaData, setData] = useState([]);
-   
+
     const getIdFromArray = (ids) => {
         if (ids?.length === 0) {
             return [0]; // or handle the empty array case as needed
@@ -45,13 +45,14 @@ const SubCategories = () => {
                         "Content-Type": "application/json", // Correct header capitalization
                     },
                 });
-                
+
                 if (!response.ok) {
                     throw new Error("Failed to fetch data");
                 }
 
                 const newData = await response.json();
                 setData(newData);
+                console.log(newData)
             } catch (error) {
                 setError(error.message || 'Unknown error occurred');
             } finally {
@@ -66,30 +67,31 @@ const SubCategories = () => {
         <>
             <NavBar2 />
             <div>
-                <h1 className="sm:text-[32px] text-[22px] text-black font-semibold flex justify-center textShadow-[#fff] text-center sm:mt-5 sm:pt-0 pt-20">
+                <h1 className="sm:text-[32px] text-[22px] text-black font-semibold flex justify-center textShadow-[#fff] text-center sm:mt-5 sm:pt-0 pt-20 sm:px-0 px-2">
                     {loading ? "Loading..." : CinemaData.fullTitle}
                 </h1>
                 <hr className="sep-3 mt-5" />
-                <div className="advertisement w-[80vw] mx-auto mt-10">
+                <div className="advertisememnt sm:w-[80vw] w-auto mx-auto sm:mt-10 mt-0">
                     {/* sub header */}
-                    <div className="sub-header flex sm:flex-row flex-col mb-10 rounded-xl">
-                        <div className="left sm:w-[60vw] w-[80vw] mx-auto">
+                    <div className="sub-header flex  mb-10 rounded-xl">
+
+                        <div className="left sm:w-[60%] w-[100vw] mx-auto">
                             {!loading && <Slider images={CinemaData?.image} />}
                             {/* different advertisement area */}
                         </div>
-                        <div className="right sm:w-[40vw] mx-auto p-10 bg-black sm:mt-3 mt-10 rounded-3xl h-auto sm:ml-5">
+                        <div className="right sm:w-[40%] mx-auto p-10 bg-black sm:mt-3 mt-10 rounded-3xl h-auto sm:ml-5">
                             <h1 className="text-gray-200 sm:text-[18px] text-[16px]">
                                 About Advertising in {CinemaData.title}.
                             </h1>
                             <p className="text-gray-400 mt-3">
                                 {CinemaData.shortDescription}
                             </p>
-                            <p className="text-gray-500 text-xl mt-5">
-                                {" "}
-                                <i className="fa-regular fa-calendar mr-2"></i> {new Date(CinemaData.createdAt).toLocaleString()}{" "}
+                            <p className="text-white text-xl mt-5">
+                                {" "} 
+                                <i className="fa-regular fa-calendar mr-2"></i> Extensive Ad Visibility {CinemaData.totalReach} 
                             </p>
                             <div className="mt-6">
-                                <div className="border border-l-8 border-lime-200 p-4">
+                                <div className="border border-l-8 border-red-500 p-4">
                                     {CinemaData.facts?.map((item, index) => (
                                         <li className="text-white" key={index}>
                                             {item.fact}

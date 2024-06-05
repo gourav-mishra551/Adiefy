@@ -10,16 +10,13 @@
     margin-top: 30px;
     font-weight: 500;
     line-height: 24px;
-    font-family: 'Poppins';
   }
   
   .dropdown .dropbtn {  
     height: auto;
-    width: 129px;
+    width: max-content;
   }
-  
  
-  
   .dropdown-content {
     display: none;
     position: fixed;
@@ -29,8 +26,6 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 30;
   }
-  
-  
   
   .dropdown:hover .dropdown-content {
     display: block;
@@ -71,7 +66,7 @@
       
     }
     .dropdown .dropbtn{
-      width: 142px;
+      width: max-content;
     }
     .dropdown-content{
       position: relative;

@@ -355,7 +355,7 @@ const Login = () => {
           <div className="mt-4 text-sm text-gray-600 text-center">
             <p>
               Dontt have any account ?{" "}
-              <a href="#" className="text-black hover:underline">
+              <a href="/signup" className="text-black hover:underline">
                 Register here
               </a>
             </p>

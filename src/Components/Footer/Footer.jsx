@@ -1,13 +1,12 @@
-
 export default function Footers() {
   return (
     // HTMLResult Skip Results Iframe
     // EDIT ON
     
-    <div className=" mx-auto bg-black">
-        <div className="p-5 bg-black rounded-lg py-12 mt-5 border border-red-400 w-[50vw] mx-auto  rounded-b-[80px]">
+    <div className=" mx-auto bg-black sm:p-0 px-3 py-1">
+        <div className="p-5 bg-black rounded-lg py-12 mt-5 border border-red-400 sm:w-[50vw] mx-auto  rounded-b-[80px]">
             <div className="flex flex-col ">
-                <h3 className="text-[62px] leading-10 text-white w-full text-center font-bold">Suscribe <span className="text-[62px] font-thin font-sans">Newsletter</span></h3>
+                <h3 className="sm:text-[62px] text-[30px] leading-10 text-white w-full text-center font-bold">Subscribe <span className="sm:text-[62px] text-[30px]  font-thin font-sans">Newsletter</span></h3>
                 <div className="text-base text-gray-500 w-full  md:w-2/4 self-center text-center lg:pt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
             </div>
             <div className="flex flex-row justify-center space-x-3 py-4">
@@ -15,10 +14,10 @@ export default function Footers() {
                 <input className="font-bold rounded-lg text-white bg-red-700 hover:bg-red-600 cursor-pointer px-3 py-1 md:px-6 md:py-3 focus:outline-none"  type="submit" value="subscribe"/>
             </div>
         </div>
-        <footer className="relative bg-blueGray-200 pt-8 pb-6">
-  <div className="container mx-auto px-4">
+        <footer className="relative  pt-8 pb-6">
+  <div className="container mx-auto  w-[80vw]">
     <div className="flex flex-wrap text-left lg:text-left">
-      <div className="w-full lg:w-6/12 px-4">
+      <div className="w-full lg:w-6/12 ">
         <h4 className="text-3xl fonat-semibold text-white">Let's keep in touch!</h4>
         <h5 className="text-lg mt-0 mb-2 text-white">
           Find us on any of these platforms, we respond 1-2 business days.
