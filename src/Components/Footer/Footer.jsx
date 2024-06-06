@@ -10,8 +10,8 @@ export default function Footers() {
                 <div className="text-base text-gray-500 w-full  md:w-2/4 self-center text-center lg:pt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
             </div>
             <div className="flex flex-row justify-around  mt-4">
-              <input className="px-2 py-2 rounded-md" type="text" placeholder="email@email.com" />
-              <button className="border-2 border-white px-2 py-2 bg-red-600 rounded-md text-white">Subscribe</button>
+              <input className="px-2 py-2 rounded-md sm:w-auto w-[60%]" type="text" placeholder="email@email.com" />
+              <button className="border-2 sm:w-auto w-[32%] border-white px-2 py-2 bg-red-600 rounded-md text-white">Subscribe</button>
             </div>
   
         </div>
