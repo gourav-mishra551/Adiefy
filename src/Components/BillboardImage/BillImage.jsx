@@ -3,7 +3,7 @@ import "./billboard.css"
 
 const BillImage = () => {
   return (
-    <div className="pb-20 flex justify-center bg-black sm:pt-32 pt-0">
+    <div className="pb-20  justify-center bg-black sm:pt-32 pt-0 sm:flex hidden">
 
       <div className="gallery ">
         <span style={{ '--i': 1 }}>
