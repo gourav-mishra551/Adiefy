@@ -9,7 +9,7 @@ export default function Footers() {
                 <h3 className="sm:text-[62px] text-[30px] leading-10 text-white w-full text-center font-bold">Subscribe <span className="sm:text-[62px] text-[30px]  font-thin font-sans">Newsletter</span></h3>
                 <div className="text-base text-gray-500 w-full  md:w-2/4 self-center text-center lg:pt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
             </div>
-            <div className="flex flex-row justify-center space-x-3 py-4">
+            <div className="flex flex-row justify-center space-x-3 py-4 w-[85vw]">
                 <input className="bg-white rounded-lg text-sm px-2 sm:px-3 md:px-8 py-3" type="text" placeholder="email@email.com"/>
                 <input className="font-bold rounded-lg text-white bg-red-700 hover:bg-red-600 cursor-pointer px-3 py-1 md:px-6 md:py-3 focus:outline-none"  type="submit" value="subscribe"/>
             </div>
