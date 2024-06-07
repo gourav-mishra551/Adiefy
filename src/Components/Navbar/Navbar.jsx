@@ -22,7 +22,7 @@ export default function NavBar2() {
             <div>
                <div className="flex items-center justify-between py-3 md:py-5 md:block">
                   <Link to="/">
-                    <p className="text-white ml-10">Adifie</p> 
+                    <p className="text-white ml-10 name text-5xl">Adifie</p> 
                   </Link>
                   <div className="md:hidden">
                      <button

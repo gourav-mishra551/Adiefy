@@ -21,7 +21,7 @@ const Header = () => {
                 craft narratives that resonate and drive results.
               </p>
               <div className="sm:mt-10 mt-5">
-                <button className="bg-red-600 px-3 py-2 rounded-md ">Buy Ads</button>
+                <button className="bg-red-600 px-4 py-3 rounded-md hover:border-2 hover:border-white text-white">Buy Ads</button>
               </div>
             </div>
 

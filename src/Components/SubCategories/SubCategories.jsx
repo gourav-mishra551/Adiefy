@@ -11,8 +11,10 @@ const SubCategories = () => {
     const ids2 = useSelector((state) => state.airportId.id2); // Access the correct state property
     const [loading, setLoading] = useState(true); // State to manage loading state
     const [error, setError] = useState(null); // State to manage errors
+    const [subCategory, setSubCategory] = useState([]);
 
     const url_main = import.meta.env.VITE_MAIN;
+    const url_sub = import.meta.env.VITE_SUB;
     const [CinemaData, setData] = useState([]);
 
     const getIdFromArray = (ids) => {
@@ -52,6 +54,34 @@ const SubCategories = () => {
 
                 const newData = await response.json();
                 setData(newData);
+              
+                console.log(newData)
+            } catch (error) {
+                setError(error.message || 'Unknown error occurred');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${url_sub}${selectedId}/advertisement`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json", // Correct header capitalization
+                    },
+            
+                });
+                const res = await response.json();
+                console.log(res)
+                if (!response.ok) {
+                    throw new Error("Failed to fetch data");
+                }
+                setSubCategory(newData.subcategories);
                 console.log(newData)
             } catch (error) {
                 setError(error.message || 'Unknown error occurred');
@@ -73,11 +103,45 @@ const SubCategories = () => {
                 <hr className="sep-3 mt-5" />
                 <div className="advertisememnt sm:w-[80vw] w-auto mx-auto sm:mt-10 mt-0">
                     {/* sub header */}
-                    <div className="sub-header flex  mb-10 rounded-xl">
+                    <div className="sub-header flex sm:flex-row flex-col mb-10 rounded-xl">
 
                         <div className="left sm:w-[60%] w-[100vw] mx-auto">
                             {!loading && <Slider images={CinemaData?.image} />}
                             {/* different advertisement area */}
+
+                         
+                                    {subCategory?.map((item) => {
+                                        return (
+                                            <div
+                                                id={item._id}
+                                                className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 sm:w-auto w-[80vw] mx-auto"
+                                                onClick={() => handleDivClick(item._id)}
+                                            >
+                                                <img
+                                                    className="h-[20vh]  sm:w-[20vw] w-[70vw] bg-cover"
+                                                    src={item.image[0]?.url}
+                                                    alt=""
+                                                />
+                                                <div className="ml-8">
+                                                    <h2 className="sm:text-[24px] text-[18px] text-gray-500 font-medium textShadow-[#fff] mt-3">
+                                                        {item.title}
+                                                    </h2>
+                                                    <p className="text-gray-500">
+                                                        {item.totalReach} Monthely Passenger
+                                                    </p>
+                                                    <p className="mt-4 text-[22px]">
+                                                        {" "}
+                                                        <i
+                                                            className="fa fa-tag  text-red-500 mr-3"
+                                                            aria-hidden="true"
+                                                        ></i>{" "}
+                                                        <span>Price ? </span> On Request
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                               
                         </div>
                         <div className="right sm:w-[40%] mx-auto p-10 bg-black sm:mt-3 mt-10 rounded-3xl h-auto sm:ml-5">
                             <h1 className="text-gray-200 sm:text-[18px] text-[16px]">

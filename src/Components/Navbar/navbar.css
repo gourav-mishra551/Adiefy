@@ -4,7 +4,9 @@
     padding: 14px 16px;
     text-decoration: none;
   }
-  
+  .name{
+	font-family: "Luxurious Script", cursive;
+  }
   .dropdown {
     overflow: hidden;
     margin-top: 30px;
