@@ -23,6 +23,7 @@ import TelevisionAdd from './Pages/Television/Television'
 import Malls from './Pages/Malls/Malls'
 import PricePlans from './Components/Price/PricePlans'
 import MarketingStratigies from './Components/Marketing/MarketingStrategies'
+import SubAdetails from './Components/SubAdDetails/SubAdetails'
 
 function App() {
 
@@ -57,6 +58,7 @@ function App() {
           <Route path="/subpages" element={<SubCategories />} />
           <Route path='/price-plans' element={<PricePlans />} />
           <Route path='/marketing' element={<MarketingStratigies />} />
+          <Route path='/subpages/:cid/subcategory/:sid/:aid' element={<SubAdetails />} />
         </Routes>
       </BrowserRouter>
     </>
