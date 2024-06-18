@@ -21,8 +21,7 @@ import Radio from './Pages/Radio/Radio'
 import Sports from './Pages/Sports/Sports'
 import TelevisionAdd from './Pages/Television/Television'
 import Malls from './Pages/Malls/Malls'
-import PricePlans from './Components/Price/PricePlans'
-import MarketingStratigies from './Components/MarketingStratigies/MarketingStratigies'
+import SubAdetails from './Components/SubAdDetails/SubAdetails'
 
 function App() {
 
@@ -55,8 +54,9 @@ function App() {
           <Route path="/malls" element={<Malls />} />
           {/* subpages */}
           <Route path="/subpages" element={<SubCategories />} />
-          <Route path='/price-plans' element={<PricePlans />} />
-          <Route path='/marketing' element={<MarketingStratigies />} />
+          <Route path='/subpages/:cid/subcategory/:sid/:aid' element={<SubAdetails />} />
+          {/* <Route path='/price-plans' element={<PricePlans />} /> */}
+          {/* <Route path='/marketing' element={<MarketingStratigies />} /> */}
         </Routes>
       </BrowserRouter>
     </>

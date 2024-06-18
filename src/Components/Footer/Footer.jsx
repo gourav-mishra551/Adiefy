@@ -9,15 +9,16 @@ export default function Footers() {
                 <h3 className="sm:text-[62px] text-[30px] leading-10 text-white w-full text-center font-bold">Subscribe <span className="sm:text-[62px] text-[30px]  font-thin font-sans">Newsletter</span></h3>
                 <div className="text-base text-gray-500 w-full  md:w-2/4 self-center text-center lg:pt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
             </div>
-            <div className="flex flex-row justify-center space-x-3 py-4">
-                <input className="bg-white rounded-lg text-sm px-2 sm:px-3 md:px-8 py-3" type="text" placeholder="email@email.com"/>
-                <input className="font-bold rounded-lg text-white bg-red-700 hover:bg-red-600 cursor-pointer px-3 py-1 md:px-6 md:py-3 focus:outline-none"  type="submit" value="subscribe"/>
+            <div className="flex flex-row justify-around  mt-4">
+              <input className="px-2 py-2 rounded-md sm:w-auto w-[60%]" type="text" placeholder="email@email.com" />
+              <button className="border-2 sm:w-auto w-[32%] border-white px-2 py-2 bg-red-600 rounded-md text-white">Subscribe</button>
             </div>
+  
         </div>
-        <footer className="relative bg-blueGray-200 pt-8 pb-6">
-  <div className="container mx-auto px-4">
+        <footer className="relative  pt-8 pb-6">
+  <div className="container mx-auto  w-[80vw]">
     <div className="flex flex-wrap text-left lg:text-left">
-      <div className="w-full lg:w-6/12 px-4">
+      <div className="w-full lg:w-6/12 ">
         <h4 className="text-3xl fonat-semibold text-white">Let's keep in touch!</h4>
         <h5 className="text-lg mt-0 mb-2 text-white">
           Find us on any of these platforms, we respond 1-2 business days.

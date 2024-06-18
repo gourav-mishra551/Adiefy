@@ -169,10 +169,27 @@
     --size: 6rem;
   }
   .header-h1{
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
-}
+  .header {
+    height: 100vh;
+    background-color: black;
+    background-size: cover;
+    background-position: top;
+    position: relative;
 
+}
+}
+@media (max-width: 600px) {
+  .header {
+    height: 80vh !important;
+    background-color: black;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%) !important;
+}
+}
 .header {
     height: 100vh;
     background-color: black;

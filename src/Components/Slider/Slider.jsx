@@ -3,6 +3,7 @@ import "./slider.css";
 import useSlider from '../../Hooks/useSlider';
 
 const Slider = ({images}) => {
+  console.log(images)
   
   const slideImage = useRef(null)
   const { goToPreviousSlide, goToNextSlide } = useSlider(slideImage, images )

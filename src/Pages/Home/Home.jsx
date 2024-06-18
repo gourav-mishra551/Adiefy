@@ -16,7 +16,7 @@ import GetinTouch from "../../Components/GetInTouch/GetinTouch"
 
 const Home = () => {
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gray-200 overflow-hidden">
       <NavBar2 />
       <Header />
       <Media />

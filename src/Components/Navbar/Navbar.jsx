@@ -21,8 +21,8 @@ export default function NavBar2() {
          <div className="sm:px-0  px-[5%] mx-auto bg-black md:items-center md:flex hh sm:flex sm:justify-between">
             <div>
                <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                  <Link to="/">
-                    <p className="text-white ml-10">Adiefy</p> 
+                  <Link to="/home">
+                     Adiefy
                   </Link>
                   <div className="md:hidden">
                      <button
@@ -57,7 +57,7 @@ export default function NavBar2() {
                            </Link>
 
                            {/* drop down ++++++++++++++++++++=========== */}
-                           <div className="dropdown">
+                           <div className="dropdown ">
                               <button className="dropbtn  sm:my-0 sm:font-bold mr-auto sm:text-base text-[18px] sm:ml-8  font-medium hover:text-red-600 link link-underline link-underline-black text-white sm:pb-[27px]  ml-[2px]">Advertisements
                                  <i className="fa fa-caret-down ml-2"></i>
                               </button>

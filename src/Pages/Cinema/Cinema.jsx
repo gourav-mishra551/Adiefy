@@ -43,7 +43,6 @@ const Cinema = () => {
                 const newData = await response.json();
                 setdata(newData.category);
                 setSubCategory(newData.subcategories)
-                console.log(newData)
             } catch (error) {
                 setError(error);
             } finally {
@@ -57,7 +56,7 @@ const Cinema = () => {
 
     if (loading) {
         return (
-            <h1>
+            <h1 className="flex justify-center align-middle text-center text-4xl my-auto  text-red-700">
                 Loading ....
             </h1>
         )
@@ -71,16 +70,16 @@ const Cinema = () => {
                         {CinemaData?.fullTitle}
                     </h1>
                     <hr className="sep-3 mt-5" />
-                    <div className="advertisememnt w-[80vw] mx-auto mt-10">
+                    <div className="advertisememnt sm:w-[80vw] w-auto mx-auto sm:mt-10 mt-0">
                         {/* sub header */}
                         <div className="sub-header flex sm:flex-row flex-col mb-10  rounded-xl">
-                            <div className="left sm:w-[60vw] w-[80vw] mx-auto">
+                            <div className="left sm:w-[60vw] w-[100vw] mx-auto">
                                 <Slider images={CinemaData.image} />
                                 {/* different adertisement area  */}
                                 <Link to="/subpages">
                                 {subCategory.map((item)=>{
                                         return(
-                                            <div id= {item._id} className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 "
+                                            <div id= {item._id} className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 sm:w-auto w-[80vw] mx-auto"
                                             onClick={() => handleDivClick(item._id)}
                                             >
                                         <img
@@ -121,10 +120,10 @@ const Cinema = () => {
     
                                 </p>
                                 <div className="mt-6">
-                                    <div className="border border-l-8 border-lime-200 p-4 ">
+                                    <div className="border border-l-8 border-red-500 p-4 ">
                                         {CinemaData.facts?.map((item, index) => (
                                             <li className="text-white" key={index}>
-                                                {console.log(item)}
+                                               
                                              {item.fact }
                                             </li>
                                         ))}

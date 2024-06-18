@@ -7,22 +7,22 @@ import { useState, useEffect } from "react";
 import parse from 'html-react-parser';
 import { useDispatch } from "react-redux";
 
-import { idstorePush , airportIdPush} from "../../redux/slice";
+import { idstorePush, airportIdPush } from "../../redux/slice";
 
 
 const Digital = () => {
     const dispatch = useDispatch()
     const [loading, setLoading] = useState(true); // State to manage loading state
     const [error, setError] = useState(null); // State to manage errors
-    const [subCategory , setSubCategory] = useState([])
+    const [subCategory, setSubCategory] = useState([])
 
     const url_main = import.meta.env.VITE_MAIN;
-    
+
     const [CinemaData, setdata] = useState([]);
 
     const handleDivClick = (id) => {
         dispatch(idstorePush(id));
-      };
+    };
 
     const digital_id = "66236d718e29a26717c88444"
     dispatch(airportIdPush(digital_id));
@@ -73,39 +73,41 @@ const Digital = () => {
                         {CinemaData.fullTitle}
                     </h1>
                     <hr className="sep-3 mt-5" />
-                    <div className="advertisememnt w-[80vw] mx-auto mt-10">
+                    <div className="advertisememnt sm:w-[80vw] w-auto mx-auto sm:mt-10 mt-0">
                         {/* sub header */}
                         <div className="sub-header flex sm:flex-row flex-col mb-10  rounded-xl">
-                            <div className="left sm:w-[60vw] w-[80vw] mx-auto">
+                            <div className="left sm:w-[60vw] w-[100vw] mx-auto">
                                 <Slider images={CinemaData.image} />
                                 {/* different adertisement area  */}
                                 <Link to="/subpages">
-                                {subCategory.map((item)=>{
-                                        return(
-                                            <div id= {item._id} className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 "
-                                            onClick={() => handleDivClick(item._id)}
+                                    {subCategory.map((item) => {
+                                        return (
+                                            <div
+                                                id={item._id}
+                                                className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 sm:w-auto w-[80vw] mx-auto"
+                                                onClick={() => handleDivClick(item._id)}
                                             >
-                                        <img
-                                            className="h-[20vh]  sm:w-[20vw] w-[70vw] bg-cover"
-                                            src= {item.image[0]?.url}
-                                            alt=""
-                                        />
-                                        <div className="ml-8">
-                                            <h2 className="sm:text-[24px] text-[18px] text-gray-500 font-medium textShadow-[#fff] mt-3">
-                                                {item.title}
-                                            </h2>
-                                            <p className="text-gray-500">{item.totalReach} Monthely Passenger</p>
-                                            <p className="mt-4 text-[22px]">
-                                                {" "}
-                                                <i
-                                                    className="fa fa-tag  text-red-500 mr-3"
-                                                    aria-hidden="true"
-                                                ></i>{" "}
-                                                <span>Price ? </span> On Request
-                                            </p>
-                                        </div>
-                                       
-                                    </div>
+                                                <img
+                                                    className="h-[20vh]  sm:w-[20vw] w-[70vw] bg-cover"
+                                                    src={item.image[0]?.url}
+                                                    alt=""
+                                                />
+                                                <div className="ml-8">
+                                                    <h2 className="sm:text-[24px] text-[18px] text-gray-500 font-medium textShadow-[#fff] mt-3">
+                                                        {item.title}
+                                                    </h2>
+                                                    <p className="text-gray-500">{item.totalReach} Monthely Passenger</p>
+                                                    <p className="mt-4 text-[22px]">
+                                                        {" "}
+                                                        <i
+                                                            className="fa fa-tag  text-red-500 mr-3"
+                                                            aria-hidden="true"
+                                                        ></i>{" "}
+                                                        <span>Price ? </span> On Request
+                                                    </p>
+                                                </div>
+
+                                            </div>
                                         )
                                     })}
                                 </Link>
@@ -115,19 +117,19 @@ const Digital = () => {
                                     About Advertising in {CinemaData.title}.
                                 </h1>
                                 <p className="text-gray-400 mt-3">
-                                 {CinemaData.shortDescription}
+                                    {CinemaData.shortDescription}
                                 </p>
                                 <p className="text-gray-500 text-xl mt-5">
                                     {" "}
-                                    <i className="fa-regular fa-calendar mr-2"></i> { new Date(CinemaData.createdAt).toLocaleString() }{" "}
-    
+                                    <i className="fa-regular fa-calendar mr-2"></i> {new Date(CinemaData.createdAt).toLocaleString()}{" "}
+
                                 </p>
                                 <div className="mt-6">
-                                    <div className="border border-l-8 border-lime-200 p-4 ">
+                                    <div className="border border-l-8 border-red-500 p-4 ">
                                         {CinemaData.facts?.map((item, index) => (
                                             <li className="text-white" key={index}>
                                                 {console.log(item)}
-                                             {item.fact }
+                                                {item.fact}
                                             </li>
                                         ))}
                                     </div>
@@ -136,9 +138,9 @@ const Digital = () => {
                         </div>
                     </div>
                     <div className="log_discription w-[80vw] mx-auto sm:text-xl text-lg text-justify mb-10 mt-10">
-                    {parse(`<p>${CinemaData.longDescription}</P>`)}
+                        {parse(`<p>${CinemaData.longDescription}</P>`)}
 
-                </div>
+                    </div>
                     <Footers />
                 </div>
             </>

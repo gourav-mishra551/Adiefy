@@ -4,7 +4,7 @@ const Goals = () => {
       <h1 className="sm:text-[32px] text-center text-[22px] text-gray-200 font-semibold flex justify-center textShadow-[#fff]">
         Achieve all your goals in one place
       </h1>
-      <div className="button w-[120px] mx-auto mt-6">
+      <div className=" w-[120px] mx-auto mt-6">
         <a
           href="#_"
           className=" mx-auto relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-black transition duration-300 ease-out border-2 border-gray-700  rounded-md shadow-md group"
@@ -87,8 +87,8 @@ const Goals = () => {
           </div>
           {/* =========  second */}
           <div className="first2 flex flex-col justify-center align-middle sm:ml-24 mml-0">
-            <div className="icon bg-red-600 rounded-full sm:h-20 p-5 sm:w-20 h-[70px] w-[70px] flex justify-center items-center mx-auto">
-              <i className="fa-solid fa-mobile fa-2xl sm:pt-[18px] sm:pl-[8px]"></i>
+            <div className="icon bg-red-600 rounded-full h-20 p-5 w-20 mx-auto">
+            <i className="fa-solid fa-mobile fa-2xl pt-[18px] pl-[8px]"></i>
             </div>
             <h3 className="text-[16px] text-white sm:text-[22px] w-auto sm:w-[330px] mx-auto text-center font-semibold mt-5">
               Market your app to new users

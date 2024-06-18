@@ -4,18 +4,19 @@
     padding: 14px 16px;
     text-decoration: none;
   }
-  
+  .name{
+	font-family: "Luxurious Script", cursive;
+  }
   .dropdown {
     overflow: hidden;
     margin-top: 30px;
     font-weight: 500;
     line-height: 24px;
-    font-family: 'Poppins';
   }
   
   .dropdown .dropbtn {  
     height: auto;
-    width: 129px;
+    width: max-content;
   }
  
   .dropdown-content {
@@ -67,7 +68,7 @@
       
     }
     .dropdown .dropbtn{
-      width: 142px;
+      width: max-content;
     }
     .dropdown-content{
       position: relative;
