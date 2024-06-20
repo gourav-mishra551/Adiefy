@@ -9,6 +9,7 @@ import axios from "axios";
 import { MdError } from "react-icons/md";
 import { IoEyeOutline } from "react-icons/io5";
 import { IoMdBasket } from "react-icons/io";
+import Leads from "../Leads/Lead";
 
 const SubCategories = () => {
   const ids = useSelector((state) => state.idstore.id); // Access the correct state property
@@ -244,6 +245,7 @@ const SubCategories = () => {
               <p className="text-gray-400 mt-3">
                 {CinemaData.shortDescription}
               </p>
+              <Leads type = {"SUBCATEGORY"}  typeID = {CinemaData?._id} />
               <p className="text-white text-xl mt-5">
                 {" "}
                 <i className="fa-regular fa-calendar mr-2"></i> Extensive Ad

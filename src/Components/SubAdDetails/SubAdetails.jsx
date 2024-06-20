@@ -5,6 +5,8 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { MdOutlineErrorOutline } from "react-icons/md";
 import axios from 'axios';
 import Slider from '../Slider/Slider';
+import Leads from '../Leads/Lead';
+import Footers from '../Footer/Footer';
 
 const SubAdetails = () => {
 
@@ -93,6 +95,10 @@ const SubAdetails = () => {
                 </div>
 
             </div >
+            <div className='sm:w-[50%] w-[100%] mx-auto'>
+            <Leads type = {"ADVERTISEMENTTYPE"}  typeID = {adDetails._id}/>
+            </div>
+            <Footers/>
         </div>
     )
 }

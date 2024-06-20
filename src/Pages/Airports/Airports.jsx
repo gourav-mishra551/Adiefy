@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import parse from "html-react-parser";
 import { useDispatch } from "react-redux";
 import { idstorePush, airportIdPush } from "../../redux/slice";
+import Leads from "../../Components/Leads/Lead";
 
 const Airport = () => {
   const dispatch = useDispatch();
@@ -116,6 +117,7 @@ const Airport = () => {
                   <i className="fa-regular fa-calendar mr-2"></i>{" "}
                   {new Date(CinemaData.createdAt).toLocaleString()}{" "}
                 </p>
+                    <Leads type = {"CATEGORY"}  typeID = {airport_id}/>
                 <div className="mt-6">
                   <div className="border border-l-8 border-red-500 p-4 ">
                     {CinemaData.facts?.map((item, index) => (
