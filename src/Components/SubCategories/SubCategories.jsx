@@ -12,10 +12,10 @@ import { IoMdBasket } from "react-icons/io";
 import Leads from "../Leads/Lead";
 
 const SubCategories = () => {
-  const ids = useSelector((state) => state.idstore.id); // Access the correct state property
-  const ids2 = useSelector((state) => state.airportId.id2); // Access the correct state property
-  const [loading, setLoading] = useState(true); // State to manage loading state
-  const [error, setError] = useState(null); // State to manage errors
+  const ids = useSelector((state) => state.idstore.id);
+  const ids2 = useSelector((state) => state.airportId.id2);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [subCategory, setSubCategory] = useState([]);
 
   const url_main = import.meta.env.VITE_MAIN;
@@ -25,7 +25,7 @@ const SubCategories = () => {
 
   const getIdFromArray = (ids) => {
     if (ids?.length === 0) {
-      return [0]; // or handle the empty array case as needed
+      return [0];
     } else if (ids?.length === 1) {
       return ids[0];
     } else {
@@ -34,7 +34,7 @@ const SubCategories = () => {
   };
   const getIdFromAirport = (ids) => {
     if (ids?.length === 0) {
-      return null; // or handle the empty array case as needed
+      return null;
     } else if (ids?.length === 1) {
       return ids[0];
     } else {
@@ -54,7 +54,7 @@ const SubCategories = () => {
           {
             method: "GET",
             headers: {
-              "Content-Type": "application/json", // Correct header capitalization
+              "Content-Type": "application/json",
             },
           }
         );
@@ -75,7 +75,7 @@ const SubCategories = () => {
     };
 
     fetchData();
-  }, []);
+  }, [url_main, airportId, selectedId]);
 
   const getAllAdvertisement = async () => {
     try {
@@ -95,7 +95,7 @@ const SubCategories = () => {
         const response = await fetch(`${url_sub}${selectedId}/advertisement`, {
           method: "GET",
           headers: {
-            "Content-Type": "application/json", // Correct header capitalization
+            "Content-Type": "application/json",
           },
         });
         const res = await response.json();
@@ -114,7 +114,7 @@ const SubCategories = () => {
 
     fetchData();
     getAllAdvertisement();
-  }, []);
+  }, [url_sub, selectedId]);
 
   return (
     <>
@@ -245,7 +245,7 @@ const SubCategories = () => {
               <p className="text-gray-400 mt-3">
                 {CinemaData.shortDescription}
               </p>
-              <Leads type = {"SUBCATEGORY"}  typeID = {CinemaData?._id} />
+              <Leads type={"SUBCATEGORY"} typeID={CinemaData?._id} />
               <p className="text-white text-xl mt-5">
                 {" "}
                 <i className="fa-regular fa-calendar mr-2"></i> Extensive Ad
