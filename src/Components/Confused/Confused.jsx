@@ -4,8 +4,8 @@ const Confused = () => {
         <div className="w-[85vw] mx-auto flex sm:flex-row flex-col sm:mt-0 mt-10">
             <div className="left sm:flex-col flex-row my-auto justify-center align-middle ">
                 <h2 className="sm:text-[32px] text-[22px] font-bold text-center">Confused ?</h2>
-                <h2 className="sm:text-[28px] text-[18px] font-bold text-center">We can help you plan the perfect campaign!</h2>
-                <p className="mb-10 text-[16px] sm:text-[24px] font-semibold text-center">Hire our expert media planners to find, plan and place your next promotion.</p>
+                <h2 className="sm:text-[28px] text-[18px] font-semibold text-center">We can help you plan the perfect campaign!</h2>
+                <p className="mb-10 text-[16px] sm:text-[24px] font-semibold text-center">Connect with us to find, plan and place your next promotion.</p>
                 <div className="sm:w-[30vw] w-auto mx-auto flex justify-center">
                     <a href="#_" className="mt-5 relative px-5 py-4 font-medium text-white group">
                         <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-red-700 group-hover:bg-red-500 group-hover:skew-x-12"></span>

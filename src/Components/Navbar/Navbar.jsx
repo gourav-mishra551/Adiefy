@@ -184,8 +184,10 @@ export default function NavBar2() {
                </div>
             </div>
          </div >
-         <a className=" fixed overflow-hidden  flex items-center justify-center  bg-white   border-red-600  h-10 pr-3 pl-3 bg-[bubble-gum] rounded-full sm:bottom-[2.5rem] sm:top-auto top-[670px] sm:right-14 right-6  mr-4 mb-4 border border-metal  text-silver hover:bg-bubble-gum z-50" href="http://wa.me/" target="_blank" rel="noreferrer">
-            <div className=" rounded-full bg-green-400">
+         <a className=" fixed overflow-hidden  flex items-center justify-center  bg-white   border-red-600  h-10 pr-3 pl-3
+          bg-[bubble-gum] rounded-full sm:bottom-[0.2rem] sm:top-auto top-[760px] sm:right-[1px] right-6  mr-4 mb-4
+           border border-metal  text-silver hover:bg-bubble-gum z-50" href="http://wa.me/" target="_blank" rel="noreferrer">
+            <div className=" rounded-full bg-green-500">
                <i className="fa-brands fa-whatsapp fa-2xl"></i>
             </div>
             <span className="text-sm  p-1 leading-none font-semibold">Chat</span>

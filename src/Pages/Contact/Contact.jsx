@@ -8,8 +8,11 @@ const Contact = () => {
       <NavBar2 />
       <div className="container mx-auto ">
         {/* <!-- Section: Design Block --> */}
-        <section className="mb-32">
-          <div className="relative sm:h-[400px] h-[300px] overflow-hidden bg-cover sm:bg-cover bg-[60%] bg-no-repeat bg-[url('https://static.vecteezy.com/system/resources/thumbnails/008/559/009/small_2x/contact-us-button-contact-us-text-web-template-sign-icon-banner-vector.jpg')]"></div>
+        <p className="uppercase text-center sm:text-[50px] font-bold text-[#dc2626] mt-10">Contact us</p> 
+        <section className="sm:mt-[120px]">
+
+          {/* <div className="relative sm:h-[400px] h-[300px] overflow-hidden bg-cover sm:bg-cover bg-[60%] bg-no-repeat bg-[url('https://static.vecteezy.com/system/resources/thumbnails/008/559/009/small_2x/contact-us-button-contact-us-text-web-template-sign-icon-banner-vector.jpg')]"></div> */}
+        
           <div className="container px-6 md:px-12 mt-10 sm:mt-0">
             <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,46%,0.7)] dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
               <div className="flex flex-wrap">
@@ -62,7 +65,7 @@ const Contact = () => {
                       type="button"
                       
                      
-                      className="mb-6 inline-block w-full rounded bg-yellow-600 text-xl px-6 pt-2.5 pb-2 font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0"
+                      className="mb-6 inline-block w-full rounded bg-[#dc2626] text-xl px-6 pt-2.5 pb-2 font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0"
                     >
                       Send
                     </button>
@@ -136,7 +139,7 @@ const Contact = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12">
+                    {/* <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12">
                       <div className="align-start flex">
                         <div className="shrink-0">
                           <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
@@ -168,7 +171,7 @@ const Contact = () => {
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12">
                       <div className="align-start flex">
                         <div className="shrink-0">

@@ -8,7 +8,6 @@ import parse from 'html-react-parser';
 import { useDispatch } from 'react-redux';
 import { idstorePush , airportIdPush} from "../../redux/slice";
 
-
 const Cinema = () => {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(true); // State to manage loading state
@@ -25,7 +24,6 @@ const Cinema = () => {
     // cinema id
     const cinema_id = "662360f94f7ebe9592117d97"
     dispatch(airportIdPush(cinema_id));
-
 
     useEffect(() => {
         const fetchData = async () => {
@@ -52,7 +50,6 @@ const Cinema = () => {
         };
         fetchData();
     }, [])
-
 
     if (loading) {
         return (
