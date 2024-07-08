@@ -7,7 +7,8 @@ import { useState, useEffect } from "react";
 import parse from 'html-react-parser';
 import { useDispatch } from "react-redux";
 
-import { idstorePush, airportIdPush } from "../../redux/slice";
+import { idstorePush, airportIdPush } from "../../redux/Slices/IdStoreSlice/IdSlice";
+import Loader from "../../Components/Loader/Loader";
 
 
 const Digital = () => {
@@ -59,9 +60,7 @@ const Digital = () => {
 
     if (loading) {
         return (
-            <h1>
-                Loading ....
-            </h1>
+            <Loader/>
         )
     } else {
         return (

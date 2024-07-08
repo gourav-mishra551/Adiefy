@@ -9,11 +9,11 @@ export default function Footers() {
     // EDIT ON
 
     <div className=" mx-auto bg-black sm:p-0 px-3 py-1">
-      <div className="p-5 bg-black rounded-lg py-12 mt-5 border border-red-400 sm:w-[60vw] mx-auto rounded-b-[80px]">
+      <div className="p-5 bg-black rounded-none py-12 mt-5 border-b border-l border-r border-red-400 sm:w-[60vw] mx-auto rounded-b-[80px]">
         <div className="flex flex-col ">
           <h3 className="sm:text-[50px] text-[30px] leading-10 text-white w-full text-center font-bold">
             Subscribe{" "}
-            <span className="sm:text-[62px] text-[30px]  font-thin font-sans">
+            <span className="sm:text-[62px] text-[30px]  font-thin font-sans text-gray-300">
               Newsletter
             </span>
           </h3>
@@ -23,13 +23,13 @@ export default function Footers() {
           </div>
         </div>
 
-        <div className="flex flex-row justify-between mt-4 b border-[1px] border-gray-600 rounded-full px-3 py-2 sm:w-[400px] ml-[180px]">
+        <div className="flex flex-row justify-between mt-4 b border-[1px] border-gray-600 rounded-full px-3 py-2 sm:w-[400px] sm:ml-[180px] focus:outline-none">
           <input
             className="px-2 py-2 rounded-2xl sm:w-auto w-[60%] bg-black text-white"
             type="text"
             placeholder="email@email.com"
           />
-          <button className=" sm:w-auto w-[32%] px-2 py-2 bg-red-600 rounded-full text-white text-sm">
+          <button className=" sm:w-auto w-[32%] px-5 py-2 bg-red-600 rounded-full text-white text-sm ">
             Subscribe
           </button>
         </div>
@@ -44,30 +44,41 @@ export default function Footers() {
               <h5 className="text-lg mt-0 mb-2 text-white">
                 Find us on any of these platforms, we respond 1-2 business days.
               </h5>
-              <div className="mt-6 lg:mb-0 mb-6 flex gap-0">
+              <div className="mt-6 lg:mb-0 mb-6 flex gap-0 justify-center sm:justify-normal">
                 <button
-                  className="shadow-lg font-normal rounded-md flex bg-gray-500 h-8 w-8 items-center justify-center align-center outline-none focus:outline-none mr-2"
+                  className="shadow-lg font-normal rounded-md flex bg-gray-500 h-8 w-8 items-center justify-center 
+                  align-center outline-none focus:outline-none mr-2 group hover:bg-white transform transition-transform duration-300"
                   type="button"
                 >
-                  <FaXTwitter className="text-white transform transition-transform duration-300 hover:scale-125 hover:text-black" />
+                  <FaXTwitter className="text-white transform transition-transform duration-300 group-hover:scale-125 group-hover:text-black" />
                 </button>
                 <button
-                  className="  shadow-lg font-normal rounded-md flex bg-gray-500 h-8 w-8 items-center justify-center align-center outline-none focus:outline-none mr-2"
+                  className="  shadow-lg font-normal rounded-md flex bg-gray-500 h-8 w-8 items-center justify-center align-center 
+                  outline-none focus:outline-none mr-2 group hover:bg-white"
                   type="button"
                 >
-                  <FaFacebookF className="text-white transform transition-transform duration-300 hover:scale-125 hover:text-blue-600" />
+                  <FaFacebookF
+                    className="text-white transform transition-transform duration-300 group-hover:scale-125
+                   group-hover:text-blue-600"
+                  />
                 </button>
                 <button
-                  className=" shadow-lg font-normal rounded-md flex bg-gray-500 h-8 w-8 items-center justify-center align-center outline-none focus:outline-none mr-2"
+                  className=" shadow-lg font-normal rounded-md flex bg-gray-500 h-8 w-8 items-center justify-center align-center 
+                  outline-none focus:outline-none mr-2 group hover:bg-white"
                   type="button"
                 >
-                  <FaLinkedinIn className="text-white transform transition-transform duration-300 hover:scale-125 hover:text-blue-400" />
+                  <FaLinkedinIn
+                    className="text-white transform transition-transform duration-300 group-hover:scale-125
+                   group-hover:text-blue-400"
+                  />
                 </button>
                 <button
-                  className="shadow-lg font-normal flex rounded-md bg-gray-500 h-8 w-8 items-center justify-center align-center outline-none focus:outline-none mr-2"
+                  className="shadow-lg font-normal flex rounded-md bg-gray-500 h-8 w-8 items-center justify-center align-center 
+                  outline-none focus:outline-none mr-2 group hover:bg-white"
                   type="button"
                 >
-                  <IoLogoInstagram className="text-white transform transition-transform duration-300 hover:scale-125 hover:text-red-800" />
+                  <IoLogoInstagram className="text-white transform transition-transform duration-300 group-hover:scale-125
+                   group-hover:text-red-800" />
                 </button>
               </div>
             </div>
@@ -81,7 +92,7 @@ export default function Footers() {
                     <li>
                       <a
                         className="text-gray-300 hover:text-gray-600 block pb-2 text-sm"
-                        href="https://www.creative-tim.com/presentation?ref=njs-profile"
+                        
                       >
                         About Us
                       </a>
@@ -89,7 +100,7 @@ export default function Footers() {
                     <li>
                       <a
                         className="text-gray-300 hover:text-gray-600  block pb-2 text-sm"
-                        href="https://blog.creative-tim.com?ref=njs-profile"
+                   
                       >
                         Blog
                       </a>
@@ -97,7 +108,7 @@ export default function Footers() {
                     <li>
                       <a
                         className="text-gray-300 hover:text-gray-600 block pb-2 text-sm"
-                        href="https://www.github.com/creativetimofficial?ref=njs-profile"
+                      
                       >
                         Github
                       </a>
@@ -105,7 +116,7 @@ export default function Footers() {
                     <li>
                       <a
                         className="text-gray-300 hover:text-gray-600 block pb-2 text-sm"
-                        href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile"
+                       
                       >
                         Free Products
                       </a>
@@ -120,7 +131,7 @@ export default function Footers() {
                     <li>
                       <a
                         className="text-gray-300 hover:text-gray-600 block pb-2 text-sm"
-                        href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile"
+                       
                       >
                         MIT License
                       </a>
@@ -128,7 +139,7 @@ export default function Footers() {
                     <li>
                       <a
                         className="text-gray-300 hover:text-gray-600 block pb-2 text-sm"
-                        href="https://creative-tim.com/terms?ref=njs-profile"
+               
                       >
                         Terms &amp; Conditions
                       </a>
@@ -136,7 +147,7 @@ export default function Footers() {
                     <li>
                       <a
                         className="text-gray-300 hover:text-gray-600 block pb-2 text-sm"
-                        href="https://creative-tim.com/privacy?ref=njs-profile"
+                   
                       >
                         Privacy Policy
                       </a>
@@ -144,7 +155,7 @@ export default function Footers() {
                     <li>
                       <a
                         className="text-gray-300 hover:text-gray-600 block pb-2 text-sm"
-                        href="https://creative-tim.com/contact-us?ref=njs-profile"
+                  
                       >
                         Contact Us
                       </a>

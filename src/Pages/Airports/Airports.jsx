@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import parse from "html-react-parser";
 import { useDispatch } from "react-redux";
-import { idstorePush, airportIdPush } from "../../redux/slice";
+import { idstorePush, airportIdPush } from "../../redux/Slices/IdStoreSlice/IdSlice";
 import Leads from "../../Components/Leads/Lead";
+import Loader from "../../Components/Loader/Loader";
 
 const Airport = () => {
   const dispatch = useDispatch();
@@ -54,7 +55,7 @@ const Airport = () => {
   }, []);
 
   if (loading) {
-    return <h1>Loading ....</h1>;
+    return <Loader />;
   } else {
     return (
       <>
@@ -89,7 +90,7 @@ const Airport = () => {
                             {item.title}
                           </h2>
                           <p className="text-gray-500">
-                            {item.totalReach} Monthely Passenger
+                            {item.totalReach} Monthly Passenger
                           </p>
                           <p className="mt-4 text-[22px]">
                             {" "}
@@ -112,12 +113,12 @@ const Airport = () => {
                 <p className="text-gray-400 mt-3">
                   {CinemaData.shortDescription}
                 </p>
-                <p className="text-gray-500 text-xl mt-5">
+                {/* <p className="text-gray-500 text-xl mt-5">
                   {" "}
                   <i className="fa-regular fa-calendar mr-2"></i>{" "}
                   {new Date(CinemaData.createdAt).toLocaleString()}{" "}
-                </p>
-                    <Leads type = {"CATEGORY"}  typeID = {airport_id}/>
+                </p> */}
+                <Leads type={"CATEGORY"} typeID={airport_id} />
                 <div className="mt-6">
                   <div className="border border-l-8 border-red-500 p-4 ">
                     {CinemaData.facts?.map((item, index) => (

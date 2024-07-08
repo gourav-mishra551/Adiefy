@@ -10,6 +10,8 @@ import { MdError } from "react-icons/md";
 import { IoEyeOutline } from "react-icons/io5";
 import { IoMdBasket } from "react-icons/io";
 import Leads from "../Leads/Lead";
+import { addToCart } from "../../redux/Slices/AddTocart/AddTocartSlice"; // Adjust the path as needed
+import Loader from "../Loader/Loader";
 
 const SubCategories = () => {
   const ids = useSelector((state) => state.idstore.id);
@@ -17,6 +19,7 @@ const SubCategories = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [subCategory, setSubCategory] = useState([]);
+  const dispatch = useDispatch();
 
   const url_main = import.meta.env.VITE_MAIN;
   const url_sub = import.meta.env.VITE_SUB;
@@ -41,6 +44,7 @@ const SubCategories = () => {
       return ids[ids?.length - 1];
     }
   };
+
   const airportId = getIdFromAirport(ids2);
   const selectedId = getIdFromArray(ids);
 
@@ -65,8 +69,6 @@ const SubCategories = () => {
 
         const newData = await response.json();
         setData(newData);
-
-        console.log(newData);
       } catch (error) {
         setError(error.message || "Unknown error occurred");
       } finally {
@@ -83,7 +85,6 @@ const SubCategories = () => {
         `https://api.assetorix.com:5500/adifie/listing/subcategory/${selectedId}/advertisement`
       );
       setGetAds(response.data);
-      console.log(adData);
     } catch (error) {
       console.log(error);
     }
@@ -98,23 +99,36 @@ const SubCategories = () => {
             "Content-Type": "application/json",
           },
         });
-        const res = await response.json();
-        console.log(res);
+        const newData = await response.json();
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
         setSubCategory(newData.subcategories);
-        console.log(newData);
       } catch (error) {
         setError(error.message || "Unknown error occurred");
       } finally {
         setLoading(false);
       }
     };
-
     fetchData();
     getAllAdvertisement();
   }, [url_sub, selectedId]);
+
+  const handleAddToCart = (ad) => {
+    dispatch(
+      addToCart({
+        id: ad._id,
+        title: ad.fullTitle,
+        price: ad.price,
+        // Add other necessary fields
+      })
+    );
+  };
+  if(loading){
+    return(
+      <Loader/>
+    )
+  }
 
   return (
     <>
@@ -125,16 +139,12 @@ const SubCategories = () => {
         </h1>
         <hr className="sep-3 mt-5" />
         <div className="advertisememnt sm:w-[80vw] w-auto mx-auto sm:mt-10 mt-0">
-          {/* sub header */}
           <div className="sub-header flex sm:flex-row flex-col mb-10 rounded-xl">
             <div className="left sm:w-[60vw] w-[100vw] mx-auto">
               {!loading && <Slider images={CinemaData?.image} />}
-              {/* different advertisement area */}
-
               <p className="font-bold text-3xl text-center mt-10">
                 Advertisement Types
               </p>
-
               <div className="flex flex-col sm:w-auto w-[90vw] mx-auto justify-end mb-10">
                 {getAds?.map((ad) => {
                   const currencySymbol =
@@ -145,76 +155,70 @@ const SubCategories = () => {
                       : ad.currency === "USD"
                       ? "$"
                       : "";
-                  {
-                    console.log(ad.currency);
-                  }
                   return (
-                    <>
-                      <div className="top-choice flex flex-col gap-3 relative border  p-5">
-                        <div className="image flex justify-center">
-                          <div className="sm:w-[100%] w-[100%] justify-center items-center ">
-                            {!loading && <Slider images={ad?.image} />}
-                          </div>
-                        </div>
-                        <div className="ribbon-2 absolute text-white font-bold">
-                          POPULAR
-                        </div>
-                        <p className="font-bold text-[#2f2c44] text-xl">
-                          {ad.fullTitle}
-                        </p>
-                        <p className="font-semibold text-[#2f2c44] text-sm">
-                          {ad.shortDescription}
-                        </p>
-                        <div className="w-full h-[1px] bg-gray-400 mt-2 mb-2"></div>
-                        <div className="flex justify-between">
-                          <div className="flex gap-1">
-                            <MdError className="mt-1 text-green-500" />
-                            <p className="font-semibold">Adify Offer</p>
-                          </div>
-                          <div>
-                            <p className="font-semibold">
-                              {currencySymbol} {ad?.price} {ad?.pricePostFix}{" "}
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between">
-                          <div className="flex gap-2 border border-[#4e3bc9] p-3 h-[40px] rounded-lg">
-                            <IoEyeOutline className="mt-[1px] text-[#4e3bc9]" />
-                            <button
-                              onClick={() =>
-                                navigate(
-                                  `/subpages/${ids}/subcategory/${selectedId}/${ad._id}`
-                                )
-                              }
-                              className="text-[12px] font-bold text-[#4e3bc9]"
-                            >
-                              EXECUTION DETAILS
-                            </button>
-                          </div>
-
-                          <div className="flex gap-2 bg-[#c93b3b] h-[40px] justify-center items-center p-3 rounded-lg">
-                            <IoMdBasket className="mt-[1px] text-white" />
-                            <button className="text-[12px] font-bold  text-white">
-                              GET QUOTE
-                            </button>
-                          </div>
+                    <div className="top-choice flex flex-col gap-3 relative border p-5" key={ad._id}>
+                      <div className="image flex justify-center">
+                        <div className="sm:w-[100%] w-[100%] justify-center items-center ">
+                          {!loading && <Slider images={ad?.image} />}
                         </div>
                       </div>
-                    </>
+                      <div className="ribbon-2 absolute text-white font-bold">
+                        POPULAR
+                      </div>
+                      <p className="font-bold text-[#2f2c44] text-xl">
+                        {ad.fullTitle}
+                      </p>
+                      <p className="font-semibold text-[#2f2c44] text-sm">
+                        {ad.shortDescription}
+                      </p>
+                      <div className="w-full h-[1px] bg-gray-400 mt-2 mb-2"></div>
+                      <div className="flex justify-between">
+                        <div className="flex gap-1">
+                          <MdError className="mt-1 text-green-500" />
+                          <p className="font-semibold">Adify Offer</p>
+                        </div>
+                        <div>
+                          <p className="font-semibold">
+                            {currencySymbol} {ad?.price} {ad?.pricePostFix}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex justify-between">
+                        <div className="flex gap-2 border border-[#4e3bc9] p-3 h-[40px] rounded-lg">
+                          <IoEyeOutline className="mt-[1px] text-[#4e3bc9]" />
+                          <button
+                            onClick={() =>
+                              navigate(
+                                `/checkout/${ad._id}`
+                              )
+                            }
+                            className="text-[12px] font-bold text-[#4e3bc9]"
+                          >
+                            EXECUTION DETAILS
+                          </button>
+                        </div>
+                        <div className="flex gap-2 bg-[#c93b3b] h-[40px] justify-center items-center p-3 rounded-lg">
+                          <IoMdBasket className="mt-[1px] text-white" />
+                          <button
+                            onClick={() => handleAddToCart(ad)}
+                            className="text-[12px] font-bold text-white"
+                          >
+                            Add to Cart
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   );
                 })}
               </div>
-
               {subCategory?.map((item) => {
                 return (
                   <div
-                    id={item._id}
-                    className="card  p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 sm:w-auto w-[80vw] mx-auto"
-                    onClick={() => handleDivClick(item._id)}
+                    key={item._id}
+                    className="card p-5 flex sm:flex-row flex-col rounded-md bg-gray-100 shadow-lg mt-8 sm:w-auto w-[80vw] mx-auto"
                   >
                     <img
-                      className="h-[20vh]  sm:w-[20vw] w-[70vw] bg-cover"
+                      className="h-[20vh] sm:w-[20vw] w-[70vw] bg-cover"
                       src={item.image[0]?.url}
                       alt=""
                     />
@@ -223,12 +227,11 @@ const SubCategories = () => {
                         {item.title}
                       </h2>
                       <p className="text-gray-500">
-                        {item.totalReach} Monthely Passenger
+                        {item.totalReach} Monthly Passenger
                       </p>
                       <p className="mt-4 text-[22px]">
-                        {" "}
                         <i
-                          className="fa fa-tag  text-red-500 mr-3"
+                          className="fa fa-tag text-red-500 mr-3"
                           aria-hidden="true"
                         ></i>{" "}
                         <span>Price ? </span> On Request
@@ -247,7 +250,6 @@ const SubCategories = () => {
               </p>
               <Leads type={"SUBCATEGORY"} typeID={CinemaData?._id} />
               <p className="text-white text-xl mt-5">
-                {" "}
                 <i className="fa-regular fa-calendar mr-2"></i> Extensive Ad
                 Visibility {CinemaData.totalReach}
               </p>

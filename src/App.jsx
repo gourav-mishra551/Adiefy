@@ -28,6 +28,7 @@ import Influencer from "./Pages/Influencer/Influencer";
 import Developers from "./Pages/Developers/Developers";
 import Designers from "./Pages/Designers/Designers";
 import Studios from "./Pages/Studios/Studios";
+import AddTocart from "./Pages/AddToCar/AddTocart";
 
 function App() {
   return (
@@ -61,13 +62,14 @@ function App() {
           <Route path="developers" element={<Developers />} />
           <Route path="/designers" element={<Designers />} />
           <Route path="/studios" element={<Studios />} />
+          <Route path="/add-to-cart" element={<AddTocart />} />
 
           {/* subpages */}
           <Route path="/subpages" element={<SubCategories />} />
           <Route path="/price-plans" element={<PricePlans />} />
           <Route path="/marketing" element={<MarketingStratigies />} />
           <Route
-            path="/subpages/:cid/subcategory/:sid/:aid"
+            path="/checkout/:aid"
             element={<SubAdetails />}
           />
         </Routes>
@@ -75,4 +77,5 @@ function App() {
     </>
   );
 }
+
 export default App;

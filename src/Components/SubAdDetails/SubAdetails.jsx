@@ -7,14 +7,18 @@ import axios from 'axios';
 import Slider from '../Slider/Slider';
 import Leads from '../Leads/Lead';
 import Footers from '../Footer/Footer';
+import { useSelector } from 'react-redux';
 
 const SubAdetails = () => {
 
-    const { cid, sid, aid } = useParams();
+    const { aid } = useParams();
     const [adDetails, setAdDetails] = useState({})
     const [loading, setLoading] = useState(true);
 
-    console.log(cid, sid, aid); // This should log the correct IDs
+    const items = useSelector((state) => state.cart.items);
+    console.log("items", items);
+
+    console.log(aid); // This should log the correct IDs
 
     const getDetails = async () => {
         try {

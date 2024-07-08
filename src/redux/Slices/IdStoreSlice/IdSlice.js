@@ -1,3 +1,4 @@
+// redux/Slices/IdStoreSlice/IdSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -22,7 +23,7 @@ const idstoreSlice = createSlice({
   },
 });
 
-// Exports all category data like cinema , airports malls etc.
+// Exports all category data like cinema, airports, malls, etc.
 
 const airportIdSlice = createSlice({
   name: "airportId",
@@ -39,8 +40,6 @@ const airportIdSlice = createSlice({
 export const { idstorePush, idstorePop } = idstoreSlice.actions;
 export const { airportIdPush } = airportIdSlice.actions;
 
-// Combine reducers (if needed)
-export const rootReducer = {
-  idstore: idstoreSlice.reducer,
-  airportId: airportIdSlice.reducer,
-};
+// Export reducers
+export const idstoreReducer = idstoreSlice.reducer;
+export const airportIdReducer = airportIdSlice.reducer;

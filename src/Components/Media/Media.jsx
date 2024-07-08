@@ -6,11 +6,11 @@ const Media = () => {
   return (
     <div className="w-[85vw] mx-auto pt-[10vh] pb-[10vh]">
       <h1 className="text-[22px] sm:text-[32px] font-semibold mb-8 text-center">
-        Browse Media by Genre
+       <span className="text-[#dc2626]">Browse</span>  Media by Genre
       </h1>
       <div className=" grid grid-cols-2 sm:grid-cols-6 gap-4">
         <NavLink to="/airport">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group hover:scale-100">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group hover:scale-100">
             <div className="flex flex-col items-center justify-center p-6 group">
               <div className="text-6xl text-red-500 mb-4">
                 <img
@@ -19,13 +19,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Airport</div>
+              <div className="text-white text-md font-semibold uppercase">Airport</div>
             </div>
           </div>
         </NavLink>
 
-        <NavLink>
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+        <NavLink to='malls'>
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className="text-6xl text-red-500 mb-4">
                 <img
@@ -34,13 +34,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Malls</div>
+              <div className="text-white text-md font-semibold uppercase">Malls</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="cinema">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className="text-6xl text-red-500 mb-4">
                 <img
@@ -49,13 +49,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Cinema</div>
+              <div className="text-white text-md font-semibold uppercase">Cinema</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="digital">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className="text-6xl text-red-500 mb-4">
                 <img
@@ -64,13 +64,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Digital</div>
+              <div className="text-white text-md font-semibold uppercase">Digital</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="magazine">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className="text-6xl text-red-500 mb-4">
                 <img
@@ -79,13 +79,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Magazine</div>
+              <div className="text-white text-md font-semibold uppercase">Magazine</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="newspaper">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className="text-6xl text-red-500 mb-4">
                 <img
@@ -94,13 +94,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Newspaper</div>
+              <div className="text-white text-md font-semibold uppercase">Newspaper</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="airplane">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className="text-6xl text-red-500 mb-4">
                 <img
@@ -109,13 +109,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Aeroplane</div>
+              <div className="text-white text-md font-semibold uppercase">Aeroplane</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="Below-the-Line-Marketing">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className="text-6xl text-red-500 mb-4">
                 <img
@@ -124,13 +124,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">BTL</div>
+              <div className="text-white text-md font-semibold uppercase">BTL</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="outdoor">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className="text-6xl text-red-500 mb-4">
                 <img
@@ -139,13 +139,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Outdoor</div>
+              <div className="text-white text-md font-semibold uppercase">Outdoor</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="radio">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className="text-6xl text-red-500 mb-4">
                 <img
@@ -154,13 +154,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Radio</div>
+              <div className="text-white text-md font-semibold uppercase">Radio</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="sports">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className="text-6xl text-red-500 mb-4">
                 <img
@@ -169,13 +169,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Sports</div>
+              <div className="text-white text-md font-semibold uppercase">Sports</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="television">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className="text-6xl text-red-500 mb-4">
                 <img
@@ -184,13 +184,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Television</div>
+              <div className="text-white text-md font-semibold uppercase">Television</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="influencer">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className=" text-red-500 mb-4">
                 <img
@@ -199,7 +199,7 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">
+              <div className="text-white text-md font-semibold uppercase">
                 Influencers
               </div>
             </div>
@@ -207,7 +207,7 @@ const Media = () => {
         </NavLink>
 
         <NavLink to="developers">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className=" text-red-500 mb-4">
                 <img
@@ -216,13 +216,16 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Developers</div>
+              <div className="text-white text-md font-semibold uppercase">Developers</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="designers">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div
+            className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] 
+          hover:shadow-xl transition-all duration-300 group"
+          >
             <div className="flex flex-col items-center justify-center p-6">
               <div className=" text-red-500 mb-4">
                 <img
@@ -231,13 +234,13 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Designers</div>
+              <div className="text-white text-md font-semibold uppercase">Designers</div>
             </div>
           </div>
         </NavLink>
 
         <NavLink to="studios">
-          <div className="max-w-sm mx-auto bg-[#797777] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
+          <div className="max-w-sm mx-auto bg-[#000] shadow-lg rounded-lg overflow-hidden sm:w-[13vw] hover:shadow-xl transition-all duration-300 group">
             <div className="flex flex-col items-center justify-center p-6">
               <div className=" text-red-500 mb-4">
                 <img
@@ -246,7 +249,7 @@ const Media = () => {
                   className="w-[80px] group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <div className="text-white text-lg font-semibold">Studios</div>
+              <div className="text-white text-md font-semibold uppercase">Studios</div>
             </div>
           </div>
         </NavLink>

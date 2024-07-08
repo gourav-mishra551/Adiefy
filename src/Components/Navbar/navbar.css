@@ -35,19 +35,18 @@
   
   /* Create three equal columns that floats next to each other */
   .column {
-    float: left;
-    width: 23.33%;
-    padding: 10px;
+	/* display: flex; */
+    /* float: right; */
+    /* width: 16%; */
+    /* padding: 10px;
     background-color: white;
-    height: auto;
+    height: 50px; */
   }
   
   .column a {
     text-decoration: none;
     display: flex;
   }
-  
-  
   
   /* Clear floats after the columns */
   .row:after {
@@ -104,6 +103,28 @@
 	background-size: 100% 3px;
 	background-position: 0 100%
 }
+
+
+/* underline for dropdown content arman */
+.link-underline-drop {
+	border-bottom-width: 20%;
+	background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+	background-size: 0 0px;
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size .5s ease-in-out;
+	
+}
+
+.link-underline-black-drop {
+	background-image: linear-gradient(transparent, transparent), linear-gradient( rgb(255, 128, 128), rgb(233, 3, 3))
+}
+
+.link-underline-drop:hover {
+	background-size: 70% 3px;
+	background-position: 0 100%
+}
+
 .navbar {
 	
 	height: 80px;
@@ -252,4 +273,12 @@
 		padding: 20px;
 	}
   }
+
+  /* nav.sticky {
+	position: -webkit-sticky; 
+	position: sticky;
+	top: 0;
+	z-index: 1000; 
+  } */
+  
   

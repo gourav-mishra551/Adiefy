@@ -1,8 +1,15 @@
+import { useState } from "react";
 import Footers from "../../Components/Footer/Footer";
 import NavBar2 from "../../Components/Navbar/Navbar";
 import "./about.css";
+import Loader from '../../Components/Loader/Loader'
 
 const About = () => {
+  const [loading, setLoading] = useState(false);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div>
       <NavBar2 />
@@ -113,11 +120,13 @@ const About = () => {
           </div>
         </div>
       </div>
-    
+
       <div className="responsive-container-block bigContainer">
         <div className="responsive-container-block Container">
           <div className="responsive-container-block leftSide">
-            <p className="text-blk heading mt-0 p-0">Our Creative Advertisement</p>
+            <p className="text-blk heading mt-0 p-0">
+              Our Creative Advertisement
+            </p>
             <p className="text-blk subHeading">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
               dignissimos accusamus, accusantium delectus dolores similique

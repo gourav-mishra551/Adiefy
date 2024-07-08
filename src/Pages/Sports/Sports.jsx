@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import parse from 'html-react-parser';
 import { useDispatch } from 'react-redux';
-import { idstorePush, airportIdPush } from "../../redux/slice";
+import { idstorePush, airportIdPush } from "../../redux/Slices/IdStoreSlice/IdSlice";
+import Loader from "../../Components/Loader/Loader";
 
 const Sports = () => {
     const dispatch = useDispatch();
@@ -57,9 +58,7 @@ const Sports = () => {
 
     if (loading) {
         return (
-            <h1>
-                Loading ....
-            </h1>
+            <Loader/>
         )
     } else {
         return (

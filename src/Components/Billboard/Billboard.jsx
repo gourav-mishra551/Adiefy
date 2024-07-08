@@ -8,7 +8,7 @@ const Billboard = () => {
                     <div className="callout sm:w-auto w-max">
                         <h1 className="text-white">Your Brand</h1>
                         <div className="desc text-gray-200 sm:px-0 px-10"> Billboard Advertisement is A Powerful Marketing Tool That <br /> Your Business Gain Visibility and Reach</div>
-                        <div className="button112"><div className="inner">Read More</div>
+                        <div className="button112 "><div className="inner">Read More</div>
                         </div>
                     </div>
                 </section>

@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import NavBar2 from "../../Components/Navbar/Navbar";
 import Footers from "../../Components/Footer/Footer";
 import { useDispatch } from "react-redux";
-import { idstorePush, airportIdPush } from "../../redux/slice";
+import { idstorePush, airportIdPush } from "../../redux/Slices/IdStoreSlice/IdSlice";
 import Slider from "../../Components/Slider/Slider";
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
+import Loader from "../../Components/Loader/Loader";
 
 const Influencer = () => {
   const dispatch = useDispatch();
@@ -51,11 +52,7 @@ const Influencer = () => {
   }, []);
 
   if (loading) {
-    return (
-      <h1 className="flex justify-center align-middle text-center text-4xl my-auto  text-red-700">
-        Loading ....
-      </h1>
-    );
+    return <Loader />;
   } else
     return (
       <>

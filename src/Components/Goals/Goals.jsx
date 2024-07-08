@@ -79,7 +79,7 @@ const Goals = () => {
               <i className="fa-solid fa-earth-americas fa-2xl"></i>
             </div>
             <h3 className="text-[16px] text-white sm:text-[22px] w-auto sm:w-[340px] mx-auto text-center font-semibold mt-5">
-              Show your brand to more people
+              Show  to more people
             </h3>
             <p className="text-[14px] sm:text-[18px] w-auto sm:w-[330px] mx-auto text-center mt-3 font-medium text-gray-300">
               Put your brand out there to increase reach and engagement.

@@ -52,61 +52,61 @@ const Leads = ({type, typeID}) => {
     }, [submit, formData]);
 
     return (
-        <div className='mt-5 bg-white shadow-lg w-full p-5 flex flex-col gap-4 sm:w-[100%]'>
+        <div className='mt-5 bg-white shadow-lg w-full p-5 flex flex-col gap-4 sm:w-[100%] rounded-md'>
             <form onSubmit={handleSubmit}>
 
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-1'>
                     <p className='font-bold'>Name</p>
                     <input
                         type="text"
                         placeholder='Your name'
-                        className='border w-full sm:h-[40px] px-3'
+                        className='border w-full sm:h-[40px] px-3 rounded-md'
                         onChange={handleChange}
                         value={formData.name}
                         name='name'
                     />
                 </div>
 
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-1 mt-3'>
                     <p className='font-bold'>Email</p>
                     <input
                         type="email"
                         placeholder='Your email'
-                        className='border w-full sm:h-[40px] px-3'
+                        className='border w-full sm:h-[40px] px-3 rounded-md'
                         onChange={handleChange}
                         value={formData.email}
                         name='email'
                     />
                 </div>
 
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-1 mt-3'>
                     <p className='font-bold'>Mobile</p>
                     <input
                         type="text"
                         placeholder='Your mobile'
-                        className='border w-full sm:h-[40px] px-3'
+                        className='border w-full sm:h-[40px] px-3 rounded-md'
                         onChange={handleChange}
                         value={formData.mobile}
                         name='mobile'
                     />
                 </div>
 
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-1 mt-3'>
                     <p className='font-bold'>Description</p>
                     <textarea
                         type="text"
                         placeholder='Description'
-                        className='border w-full px-3 py-3'
+                        className='border w-full px-3 py-3 rounded-md'
                         onChange={handleChange}
                         value={formData.description}
                         name='description'
                     />
                 </div>
 
-                <div>
+                <div className='mt-2'>
                     <button
                         type='submit'
-                        className='w-full bg-green-500 flex justify-center items-center p-3 font-bold text-white'
+                        className='w-full rounded-md bg-[#dc2626] hover:bg-[#972f2f] flex justify-center items-center p-3 font-bold text-white'
                     >
                         Send
                     </button>

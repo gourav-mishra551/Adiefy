@@ -1,67 +1,56 @@
-
-
-import { Accordion } from "flowbite-react";
+import { useState } from "react";
+import { AccordionWrapper } from "./AccordianStyled";
+import accordionData from "./accordianData";
 
 export default function Accordions() {
+  const [isClicked, setIsClicked] = useState(null);
+
+  const handleIsClicked = (id) => {
+    if (isClicked === id) {
+      // if previously clicked accordion-item is already open, then close it.
+      return setIsClicked(null);
+    }
+
+    // and open the currently clicked accordion-item having the id value we passed.
+    setIsClicked(id);
+  };
+
   return (
     <>
-    <h1 className="text-[22px] sm:text-[32px] font-semibold sm:w-[85vw] w-[80vw] sm:mt-0 mt-10 mb-[5vh]  mx-auto">
+      <h1 className="text-[22px] sm:text-[32px] text-center font-semibold sm:w-[85vw] w-[80vw] sm:mt-0 mt-10 mb-[5vh]  mx-auto">
         FAQ'S
-    </h1>
-    <Accordion className="sm:w-[85vw] w-[80vw] mx-auto bg-black mb-10 sm:mb-0" >
-      <Accordion.Panel>
-        <Accordion.Title>What is Adifie</Accordion.Title>
-        <Accordion.Content>
-          <p className="mb-2 text-gray-500 dark:text-gray-400">
-             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio repudiandae doloremque aut, rem mollitia, deleniti a veritatis maiores, labore illo eos porro!
-          </p>
-          <p className="text-gray-500 dark:text-gray-400">
-            Check out this guide to learn how to&nbsp;
-            <a
-              href="#"
-              className="text-cyan-600 hover:underline dark:text-cyan-500"
-            >
-              get started&nbsp;
-            </a>
-            and start developing websites even faster with components on top of Tailwind CSS.
-          </p>
-        </Accordion.Content>
-      </Accordion.Panel>
-      <Accordion.Panel>
-        <Accordion.Title>Is there any membership for Adifie</Accordion.Title>
-        <Accordion.Content>
-          <p className="mb-2 text-gray-500 dark:text-gray-400">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse temporibus voluptas blanditiis?
-          </p>
-          <p className="text-gray-500 dark:text-gray-400">
-            Check out the
-            <a href="#" className="text-cyan-600 hover:underline dark:text-cyan-500">
-               design system
-            </a>
-            based on the utility classes from Tailwind CSS and components from Flowbite.
-          </p>
-        </Accordion.Content>
-      </Accordion.Panel>
-      <Accordion.Panel>
-        <Accordion.Title>How to Buy Ads?</Accordion.Title>
-        <Accordion.Content>
-          <p className="mb-2 text-gray-500 dark:text-gray-400">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus repellat voluptas vel impedit itaque qui quasi ab consequatur est, earum architecto hic!
-          </p>
-          <p className="mb-2 text-gray-500 dark:text-gray-400">
-            However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no
-            technical reason stopping you from using the best of two worlds.
-          </p>
-          <p className="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-          <ul className="list-disc pl-5 text-gray-500 dark:text-gray-400">
-            
-            <li>hii</li>
-            <li>hellow</li>
-            <li>bye</li>
-          </ul>
-        </Accordion.Content>
-      </Accordion.Panel>
-    </Accordion>
+      </h1>
+      <>
+        <section className="section flex justify-center w-[100%]">
+          <AccordionWrapper>
+            {accordionData.map((currValue) => {
+              const { id, title, content } = currValue;
+              return (
+                <div className="accordion_item" key={id}>
+                  {/*===== Accordion-title =====*/}
+                  <div
+                    className={`accordion_title ${
+                      isClicked === id ? "active" : ""
+                    }`}
+                    onClick={() => handleIsClicked(id)}
+                  >
+                    <h2>{title}</h2>
+                    <div className="toggle_icon">
+                      <span className="text-black">+</span>
+                      <span>-</span>
+                    </div>
+                  </div>
+
+                  {/* ===== Accordion-content ===== */}
+                  <div className="accordion_content">
+                    <p>{content}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </AccordionWrapper>
+        </section>
+      </>
     </>
   );
 }
